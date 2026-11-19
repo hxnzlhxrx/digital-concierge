@@ -504,19 +504,19 @@ button {
   isolation: isolate;
 }
 
-/* Full Perimeter Stitch Mask: Reveals the entire space between the outer player margin and the inner border of the stitch across all vertical & horizontal sides */
-.player-perimeter-stitch-mask {
+/* Concentric Inner Pill Mask Cap: True border-radius 9999px inner cutout that preserves exact circular curvature on left and right pill caps */
+.player-perimeter-inner-cap {
   position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  overflow: hidden;
+  inset: 4.5px;
+  border-radius: 9999px !important;
   pointer-events: none;
-  padding: 5.5px;
-  box-sizing: border-box;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  background: linear-gradient(
+    135deg,
+    rgba(38, 33, 29, 0.97) 0%,
+    rgba(20, 20, 20, 0.96) 52%,
+    rgba(28, 23, 19, 0.98) 100%
+  );
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 
 /* Bespoke Saddle Stitching Perimeter - Ivory */

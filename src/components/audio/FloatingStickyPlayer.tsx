@@ -273,13 +273,28 @@ export const FloatingStickyPlayer: React.FC = () => {
       {/* Minimized Compact Badge (Centered in viewport on mobile, docked right on tablet/desktop) */}
       {isMinimized && (
         <div className="player-minimized-badge relative liquid-glass-dark stitched-brass rounded-full px-3.5 sm:px-4 py-2 sm:py-2.5 border border-[#9E7E47]/50 shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_15px_rgba(158,126,71,0.25)] flex items-center gap-2 sm:gap-2.5 backdrop-blur-xl animate-fade-in max-w-full overflow-hidden">
+          {/* Layer 1: Full-Bleed Perimeter Progress Bar (Exact Player Width & Height, Sweeping Left-to-Right) */}
+          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none z-[1]">
+            {/* Perimeter Track Groove */}
+            <div className="absolute inset-0 bg-white/15" />
+
+            {/* Real-time Liquid Gold Progress Fill */}
+            <div
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_10px_rgba(197,168,128,0.85)]"
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
+
+          {/* Layer 2: True Concentric Pill Mask Cap (inset: 4.5px, border-radius: 9999px) preserving exact circular arc at both ends */}
+          <div className="player-perimeter-inner-cap z-[2]" aria-hidden="true" />
+
           {/* Spinning Vinyl Platter Thumbnail */}
           <div
             onClick={() => setIsMinimized(false)}
             role="button"
             tabIndex={0}
             title={language === 'en' ? 'Click to expand player' : 'Clique para expandir o player'}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-[#C5A880] relative cursor-pointer shadow-md shrink-0"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-[#C5A880] relative z-30 cursor-pointer shadow-md shrink-0"
           >
             <img
               src={currentTrack.coverImage}
@@ -292,7 +307,7 @@ export const FloatingStickyPlayer: React.FC = () => {
 
           <div
             onClick={() => setIsMinimized(false)}
-            className="min-w-0 flex-1 cursor-pointer"
+            className="min-w-0 flex-1 cursor-pointer relative z-30"
             title={language === 'en' ? 'Click to expand player' : 'Clique para expandir o player'}
           >
             <div className="flex items-center gap-1.5 min-w-0">
@@ -310,7 +325,7 @@ export const FloatingStickyPlayer: React.FC = () => {
           <button
             onClick={handleTogglePlay}
             aria-label={isPlaying ? 'Pause soundscape' : 'Play soundscape'}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#9E7E47] text-white hover:bg-[#C5A880] hover:text-[#141414] transition-all flex items-center justify-center shrink-0 shadow-sm cursor-pointer"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#9E7E47] text-white hover:bg-[#C5A880] hover:text-[#141414] transition-all flex items-center justify-center shrink-0 shadow-sm cursor-pointer relative z-30"
           >
             {isPlaying ? <Pause className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> : <Play className="w-3 h-3 sm:w-3.5 sm:h-3.5 ml-0.5" />}
           </button>
@@ -321,7 +336,7 @@ export const FloatingStickyPlayer: React.FC = () => {
             onClick={handleNextSong}
             title={language === 'en' ? 'Next song in playlist' : 'Próxima música na playlist'}
             aria-label={language === 'en' ? 'Next song in playlist' : 'Próxima música na playlist'}
-            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full text-white/75 hover:text-[#C5A880] hover:bg-white/10 transition-colors flex items-center justify-center cursor-pointer shrink-0"
+            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full text-white/75 hover:text-[#C5A880] hover:bg-white/10 transition-colors flex items-center justify-center cursor-pointer shrink-0 relative z-30"
           >
             <SkipForward className="w-3.5 h-3.5" />
           </button>
@@ -331,7 +346,7 @@ export const FloatingStickyPlayer: React.FC = () => {
             onClick={() => setIsMinimized(false)}
             title={language === 'en' ? 'Expand player' : 'Expandir player'}
             aria-label={language === 'en' ? 'Expand player' : 'Expandir player'}
-            className="p-1 sm:p-1.5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer shrink-0"
+            className="p-1 sm:p-1.5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer shrink-0 relative z-30"
           >
             <ChevronUp className="w-4 h-4" />
           </button>
@@ -341,22 +356,10 @@ export const FloatingStickyPlayer: React.FC = () => {
             onClick={closePlayer}
             title={language === 'en' ? 'Close player' : 'Fechar player'}
             aria-label="Close audio player"
-            className="p-1 sm:p-1.5 rounded-full text-white/50 hover:text-[#B84C16] hover:bg-white/10 transition-colors cursor-pointer shrink-0"
+            className="p-1 sm:p-1.5 rounded-full text-white/50 hover:text-[#B84C16] hover:bg-white/10 transition-colors cursor-pointer shrink-0 relative z-30"
           >
             <X className="w-3.5 h-3.5" />
           </button>
-
-          {/* Real-time YouTube Audio Progress Bar: Full Player Dimensions, Masked in the Entire Perimeter Space between Outer Margin and Inner Edge of Stitch */}
-          <div className="player-perimeter-stitch-mask z-15">
-            {/* Perimeter Track Groove (Always visible between outer border and inner stitch across all sides) */}
-            <div className="absolute inset-0 bg-white/15" />
-
-            {/* Real-time Liquid Gold Progress Fill sweeping left-to-right across full height & width */}
-            <div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_10px_rgba(197,168,128,0.85)]"
-              style={{ width: `${progressPct}%` }}
-            />
-          </div>
         </div>
       )}
 
