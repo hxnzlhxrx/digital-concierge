@@ -1,0 +1,1007 @@
+@import "tailwindcss";
+
+:root {
+  /* MD3E (Material Design 3 Expressive) + Copacabana Expressive Luxury Tokens */
+  --md-sys-color-surface: #FAF8F5;
+  --md-sys-color-surface-dim: #DED9D1;
+  --md-sys-color-surface-bright: #FEF9EF;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F8F3EA;
+  --md-sys-color-surface-container: #F2EDE4;
+  --md-sys-color-surface-container-high: #EDE8DF;
+  --md-sys-color-surface-container-highest: #E7E2D9;
+  --md-sys-color-on-surface: #1D1C16;
+  --md-sys-color-on-surface-variant: #4E463A;
+  --md-sys-color-primary: #9E7E47;
+  --md-sys-color-primary-container: #C5A880;
+  --md-sys-color-secondary: #1C1C1C;
+  --md-sys-color-outline-variant: #D1C5B5;
+
+  /* Brand & Carioca Accents */
+  --surface-ivory: #FAF8F5;
+  --surface-bright: #FEF9EF;
+  --surface-pure: #FFFFFF;
+  --surface-dim: #DED9D1;
+  --surface-low: #F8F3EA;
+  --surface-sand: #EAE5DC;
+  --charcoal-deep: #1C1C1C;
+  --slate-night: #141414;
+  --brass-satin: #9E7E47;
+  --brass-metallic: #C5A880;
+  --brazilian-clay: #B84C16;
+  --dusk-shadow: #4F4255;
+
+  /* Streaming Brand Glows */
+  --glow-spotify: #1DB954;
+  --glow-youtube: #FF0000;
+  --glow-apple: #FC3C44;
+
+  /* MD3E Expressive Spring & Motion Curves */
+  --ease-md3e-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-md3e-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Tactile Papersheet & Liquid Glass Shadows */
+  --shadow-papersheet-1: 0 10px 32px -6px rgba(28, 28, 28, 0.07), 0 2px 8px -1px rgba(28, 28, 28, 0.03);
+  --shadow-papersheet-2: 0 24px 52px -10px rgba(28, 28, 28, 0.14), 0 8px 20px -4px rgba(28, 28, 28, 0.06);
+}
+
+@layer base {
+  html, body {
+    overflow-x: clip;
+  }
+
+  html {
+    font-family: 'Montserrat', 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Montserrat', 'Libre Franklin', sans-serif;
+}
+
+/* ==========================================================================
+   MICA FROSTED GLASS (TEXTURAS DE VIDRIO ESMERILADO ESTILO MICA)
+   ========================================================================== */
+
+/* Frosted micro-crystalline Mica noise + multi-point ambient tinting (GPU Accelerated) */
+.mica-frosted-light {
+  background-color: rgba(250, 248, 245, 0.84);
+  background-image:
+    radial-gradient(at 10% 20%, rgba(255, 255, 255, 0.9) 0%, transparent 60%),
+    radial-gradient(at 85% 80%, rgba(197, 168, 128, 0.16) 0%, transparent 65%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(158, 126, 71, 0.18),
+    0 14px 34px -8px rgba(28, 28, 28, 0.12),
+    0 4px 10px -2px rgba(28, 28, 28, 0.04);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.mica-frosted-dark {
+  background-color: rgba(20, 18, 16, 0.84);
+  background-image:
+    radial-gradient(at 15% 15%, rgba(197, 168, 128, 0.14) 0%, transparent 60%),
+    radial-gradient(at 85% 85%, rgba(79, 66, 85, 0.18) 0%, transparent 65%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.75),
+    0 18px 44px -8px rgba(0, 0, 0, 0.65);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   LIQUID GLASS & MD3E SHAPE MORPHING (LIQUID GLASS MORPH)
+   ========================================================================== */
+
+.glass-ivory,
+.liquid-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 248, 245, 0.66) 48%,
+    rgba(248, 243, 234, 0.80) 100%
+  );
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(197, 168, 128, 0.38);
+  box-shadow:
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.92),
+    inset 1px 0 1px rgba(255, 255, 255, 0.6),
+    inset 0 -1.5px 2px rgba(158, 126, 71, 0.18),
+    0 16px 40px -8px rgba(28, 28, 28, 0.10);
+  transition:
+    border-radius 420ms var(--ease-md3e-spring),
+    transform 420ms var(--ease-md3e-spring),
+    box-shadow 420ms var(--ease-md3e-spring),
+    background 420ms var(--ease-md3e-spring);
+}
+
+.glass-dark,
+.liquid-glass-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 37, 32, 0.88) 0%,
+    rgba(20, 20, 20, 0.82) 52%,
+    rgba(30, 25, 21, 0.90) 100%
+  );
+  backdrop-filter: blur(36px) saturate(210%);
+  -webkit-backdrop-filter: blur(36px) saturate(210%);
+  border: 1px solid rgba(197, 168, 128, 0.42);
+  box-shadow:
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.30),
+    inset 1px 0 1px rgba(255, 255, 255, 0.16),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.75),
+    0 22px 54px -10px rgba(0, 0, 0, 0.65);
+  transition:
+    border-radius 420ms var(--ease-md3e-spring),
+    transform 420ms var(--ease-md3e-spring),
+    box-shadow 420ms var(--ease-md3e-spring);
+}
+
+/* Liquid Glass Morph Player (Translúcido con desenfoque profundo, refracción vítrea líquida y morphing dinámico) */
+.liquid-glass-morph-player {
+  position: relative;
+  background-color: rgba(20, 18, 16, 0.52);
+  background-image:
+    radial-gradient(ellipse at 18% 0%, rgba(197, 168, 128, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 100%, rgba(184, 76, 22, 0.12) 0%, transparent 50%),
+    linear-gradient(
+      135deg,
+      rgba(34, 30, 25, 0.58) 0%,
+      rgba(16, 15, 14, 0.46) 50%,
+      rgba(26, 23, 19, 0.60) 100%
+    );
+  backdrop-filter: blur(28px) saturate(190%) contrast(102%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(102%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  border-bottom-color: rgba(197, 168, 128, 0.40);
+  box-shadow:
+    /* Specular highlight rim (Top liquid light reflection) */
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.35),
+    /* Latón amber bottom refraction */
+    inset 0 -1.5px 1.5px 0 rgba(197, 168, 128, 0.28),
+    /* Lateral soft specular */
+    inset 1px 0 1.5px 0 rgba(255, 255, 255, 0.15),
+    /* Soft ambient elevation */
+    0 20px 48px -8px rgba(0, 0, 0, 0.48),
+    0 8px 20px -4px rgba(0, 0, 0, 0.25),
+    /* Liquid ambient gold sheen */
+    0 0 28px -4px rgba(197, 168, 128, 0.20);
+  transition:
+    border-radius 450ms var(--ease-md3e-spring),
+    transform 450ms var(--ease-md3e-spring),
+    box-shadow 450ms var(--ease-md3e-spring),
+    border-color 350ms ease,
+    background-color 350ms ease;
+}
+
+.liquid-glass-morph-player:hover {
+  background-color: rgba(24, 21, 18, 0.62);
+  border-color: rgba(229, 202, 163, 0.55);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 2px 0 rgba(197, 168, 128, 0.38),
+    inset 1px 0 1.5px 0 rgba(255, 255, 255, 0.20),
+    0 24px 56px -6px rgba(0, 0, 0, 0.58),
+    0 0 34px 0 rgba(197, 168, 128, 0.26);
+}
+
+/* MD3E Expressive Interactive Buttons & Pills (Shape Morphing on Hover & Active) */
+.md3e-btn {
+  border-radius: 9999px;
+  transition:
+    border-radius 350ms var(--ease-md3e-spring),
+    transform 350ms var(--ease-md3e-spring),
+    box-shadow 350ms var(--ease-md3e-spring),
+    background-color 300ms ease;
+}
+.md3e-btn:hover {
+  border-radius: 20px;
+  transform: translateY(-2px);
+}
+.md3e-btn:active {
+  border-radius: 14px;
+  transform: scale(0.97);
+}
+
+button {
+  transition:
+    border-radius 320ms var(--ease-md3e-spring),
+    transform 320ms var(--ease-md3e-spring),
+    background-color 280ms ease,
+    color 280ms ease,
+    box-shadow 320ms var(--ease-md3e-spring);
+}
+
+/* ==========================================================================
+   BESPOKE LEATHER TEXTURES & SADDLE STITCHING (TEXTURAS DE CUERO Y COSTURAS)
+   ========================================================================== */
+
+.leather-dark {
+  position: relative;
+  background-color: #181512;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(197, 168, 128, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(184, 76, 22, 0.08) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.085'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, #211D19 0%, #151310 55%, #1C1815 100%);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.14),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.65),
+    0 20px 50px -10px rgba(0, 0, 0, 0.55);
+  transition: border-radius 450ms var(--ease-md3e-spring), transform 450ms var(--ease-md3e-spring);
+}
+
+.leather-cognac {
+  position: relative;
+  background-color: #2C1D14;
+  background-image:
+    radial-gradient(circle at 30% 15%, rgba(197, 168, 128, 0.18) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E"),
+    linear-gradient(145deg, #382419 0%, #24160F 60%, #1B110B 100%);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 235, 210, 0.20),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.65),
+    0 20px 44px -8px rgba(28, 20, 14, 0.45);
+  transition: border-radius 450ms var(--ease-md3e-spring), transform 450ms var(--ease-md3e-spring);
+}
+
+.leather-ivory {
+  position: relative;
+  background-color: #F7F3EB;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.88) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
+    linear-gradient(165deg, #FAF8F5 0%, #F1ECE1 100%);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.92),
+    inset 0 -2px 5px rgba(158, 126, 71, 0.10),
+    var(--shadow-papersheet-1);
+}
+
+.leather-creamy-white {
+  position: relative;
+  background-color: #EFEBE4;
+  background-image:
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.96) 0%, transparent 60%),
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.88) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(216, 204, 189, 0.50) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='cw'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23cw)' opacity='0.055'/%3E%3C/svg%3E"),
+    linear-gradient(168deg, #FAF7F2 0%, #EFE8DF 45%, #E5DDD2 100%);
+  border: 1.5px solid rgba(158, 126, 71, 0.32);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+    inset 0 -2.5px 6px rgba(60, 52, 42, 0.08),
+    0 24px 60px -12px rgba(24, 20, 16, 0.16),
+    0 8px 24px -4px rgba(24, 20, 16, 0.06);
+}
+
+/* ==========================================================================
+   GLOBAL CONCENTRIC STITCHING & CORNER RADIUS ARCHITECTURE
+   Rule: For any container with outer radius R and stitch inset P,
+   the interior stitch corner radius is strictly concentric:
+   R_inner = calc(R_container - P)
+   ========================================================================== */
+:root {
+  --stitch-padding: 6px;
+  --container-radius: 24px;
+}
+
+/* Explicit mapping of Tailwind border-radius classes to CSS custom property */
+.rounded-xl, [class*="rounded-xl"] {
+  --container-radius: 12px;
+}
+.rounded-2xl, [class*="rounded-2xl"] {
+  --container-radius: 16px;
+}
+.rounded-3xl, [class*="rounded-3xl"] {
+  --container-radius: 24px;
+}
+.rounded-\[20px\], [class*="rounded-[20px]"] {
+  --container-radius: 20px;
+}
+.rounded-\[22px\], [class*="rounded-[22px]"] {
+  --container-radius: 22px;
+}
+.rounded-\[24px\], [class*="rounded-[24px]"] {
+  --container-radius: 24px;
+}
+.rounded-\[26px\], [class*="rounded-[26px]"] {
+  --container-radius: 26px;
+}
+.rounded-\[28px\], [class*="rounded-[28px]"] {
+  --container-radius: 28px;
+}
+.rounded-\[32px\], [class*="rounded-[32px]"] {
+  --container-radius: 32px;
+}
+.rounded-\[36px\], [class*="rounded-[36px]"] {
+  --container-radius: 36px;
+}
+.rounded-\[40px\], [class*="rounded-[40px]"] {
+  --container-radius: 40px;
+}
+.rounded-full, [class*="rounded-full"] {
+  --container-radius: 9999px;
+}
+
+@media (min-width: 640px) {
+  .sm\:rounded-2xl, [class*="sm:rounded-2xl"] { --container-radius: 16px; }
+  .sm\:rounded-3xl, [class*="sm:rounded-3xl"] { --container-radius: 24px; }
+  .sm\:rounded-\[28px\], [class*="sm:rounded-[28px]"] { --container-radius: 28px; }
+  .sm\:rounded-\[32px\], [class*="sm:rounded-[32px]"] { --container-radius: 32px; }
+}
+@media (min-width: 1024px) {
+  .lg\:rounded-3xl, [class*="lg:rounded-3xl"] { --container-radius: 24px; }
+  .lg\:rounded-\[28px\], [class*="lg:rounded-[28px]"] { --container-radius: 28px; }
+  .lg\:rounded-\[32px\], [class*="lg:rounded-[32px]"] { --container-radius: 32px; }
+  .lg\:rounded-\[40px\], [class*="lg:rounded-[40px]"] { --container-radius: 40px; }
+}
+
+/* Bespoke Saddle Stitching Perimeter - Brass */
+.stitched-brass {
+  position: relative;
+  --current-stitch-inset: var(--stitch-padding, 6px);
+}
+.stitched-brass::after {
+  content: '';
+  position: absolute;
+  inset: var(--current-stitch-inset);
+  border-radius: calc(var(--container-radius, 24px) - var(--current-stitch-inset));
+  border: 1.5px dashed rgba(197, 168, 128, 0.52);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Explicit full-pill override for any rounded-full stitched element */
+.stitched-brass.rounded-full::after,
+.rounded-full.stitched-brass::after,
+.stitched-ivory.rounded-full::after,
+.rounded-full.stitched-ivory::after {
+  border-radius: 9999px !important;
+}
+
+/* Explicit concentric support for rounded-[28px] */
+.stitched-brass.rounded-\[28px\]::after,
+.rounded-\[28px\].stitched-brass::after {
+  border-radius: calc(28px - var(--current-stitch-inset, 6px)) !important;
+}
+
+/* Explicit concentric support for rounded-[32px] */
+.stitched-brass.rounded-\[32px\]::after,
+.rounded-\[32px\].stitched-brass::after {
+  border-radius: calc(32px - var(--current-stitch-inset, 6px)) !important;
+}
+
+/* Explicit concentric support for rounded-[40px] */
+.stitched-brass.rounded-\[40px\]::after,
+.rounded-\[40px\].stitched-brass::after {
+  border-radius: calc(40px - var(--current-stitch-inset, 6px)) !important;
+}
+
+/* Responsive Floating Sticky Player Container */
+.player-floating-aside {
+  bottom: 1rem;
+  bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+@media (min-width: 640px) {
+  .player-floating-aside {
+    bottom: 1.5rem;
+  }
+}
+
+/* Symmetrical Binary Language Toggle */
+.language-toggle-track {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 2px;
+  border-radius: 9999px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.language-toggle-pill {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: 32px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #9E7E47;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (min-width: 1280px) {
+  .language-toggle-pill {
+    width: 36px;
+    height: 28px;
+  }
+}
+
+.language-toggle-btn {
+  position: relative;
+  z-index: 10;
+  width: 32px;
+  height: 24px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 9.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+@media (min-width: 1280px) {
+  .language-toggle-btn {
+    width: 36px;
+    height: 28px;
+    font-size: 10.5px;
+  }
+}
+
+/* Player Stitched Perimeters: Exact Concentric Corner Radii matching container formats */
+.player-minimized-badge {
+  --container-radius: 9999px;
+  --stitch-padding: 5px;
+  border-radius: 9999px;
+  touch-action: manipulation;
+  user-select: none;
+}
+.player-minimized-badge::after {
+  border-radius: 9999px !important;
+  inset: 5px !important;
+  z-index: 10 !important;
+}
+
+.player-expanded-console {
+  --container-radius: 28px;
+  --stitch-padding: 6px;
+  border-radius: 28px;
+}
+.player-expanded-console::after {
+  border-radius: 22px !important; /* 28px outer - 6px inset = 22px inner concentric */
+  inset: 6px !important;
+  z-index: 20 !important;
+}
+
+/* Bespoke Saddle Stitching Perimeter - Ivory */
+.stitched-ivory {
+  position: relative;
+  --current-stitch-inset: var(--stitch-padding, 6px);
+}
+.stitched-ivory::after {
+  content: '';
+  position: absolute;
+  inset: var(--current-stitch-inset);
+  border-radius: calc(var(--container-radius, 24px) - var(--current-stitch-inset));
+  border: 1.5px dashed rgba(158, 126, 71, 0.38);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Card Container and Concentric Inner Trace (Trazo Interno) for Keycard */
+:root {
+  --keycard-container-radius: 20px;
+  --keycard-stitch-padding: 5px;
+}
+@media (min-width: 640px) {
+  :root {
+    --keycard-container-radius: 24px;
+    --keycard-stitch-padding: 5.5px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --keycard-container-radius: 28px;
+    --keycard-stitch-padding: 6px;
+  }
+}
+
+.keycard-container-base {
+  --container-radius: var(--keycard-container-radius, 24px);
+  border-radius: var(--container-radius);
+}
+
+.stitched-dark {
+  position: relative;
+  --current-stitch-inset: var(--stitch-padding, var(--keycard-stitch-padding, 5.5px));
+  border-radius: var(--container-radius, var(--keycard-container-radius, 24px));
+}
+
+/* El border radius del trazo interno se calcula estrictamente con base en el border radius de su container */
+.stitched-dark::after {
+  content: '';
+  position: absolute;
+  inset: var(--current-stitch-inset);
+  border-radius: calc(var(--container-radius, var(--keycard-container-radius, 24px)) - var(--current-stitch-inset));
+  border: 1.25px dashed rgba(28, 28, 28, 0.42);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Unified Ethereal Ambient Glow for Keycard (Single continuous gradient, eliminating dual-spot artifact on flip) */
+.keycard-unified-glow {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -18px;
+  right: -18px;
+  border-radius: 40px;
+  pointer-events: none;
+  background: linear-gradient(
+    95deg,
+    rgba(229, 169, 60, 0.30) 0%,
+    rgba(212, 168, 83, 0.24) 24%,
+    rgba(197, 168, 128, 0.20) 40%,
+    rgba(215, 130, 75, 0.18) 52%,
+    rgba(200, 90, 36, 0.26) 72%,
+    rgba(160, 80, 110, 0.20) 100%
+  );
+  filter: blur(32px);
+  opacity: 0.85;
+  z-index: 0;
+  will-change: transform;
+}
+
+.keycard-unified-glow::before {
+  content: '';
+  position: absolute;
+  inset: 6px 12px;
+  border-radius: 36px;
+  background: linear-gradient(
+    95deg,
+    rgba(229, 169, 60, 0.32) 0%,
+    rgba(197, 168, 128, 0.24) 32%,
+    rgba(215, 130, 75, 0.20) 50%,
+    rgba(200, 90, 36, 0.30) 70%,
+    rgba(160, 80, 110, 0.22) 100%
+  );
+  filter: blur(18px);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .keycard-unified-glow {
+    top: -16px;
+    bottom: -16px;
+    left: -32px;
+    right: -32px;
+    border-radius: 52px;
+    filter: blur(40px);
+  }
+  .keycard-unified-glow::before {
+    inset: 8px 18px;
+    border-radius: 46px;
+    filter: blur(22px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .keycard-unified-glow {
+    top: -20px;
+    bottom: -20px;
+    left: -44px;
+    right: -44px;
+    border-radius: 64px;
+    filter: blur(48px);
+  }
+  .keycard-unified-glow::before {
+    inset: 10px 22px;
+    border-radius: 56px;
+    filter: blur(26px);
+  }
+}
+
+/* Tactile Paper Sheet Bottom Drop Shadow */
+.paper-sheet-bottom-shadow {
+  position: relative;
+}
+.paper-sheet-bottom-shadow::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 6%;
+  right: 6%;
+  height: 26px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(28, 28, 28, 0.20) 0%, rgba(28, 28, 28, 0.06) 55%, transparent 75%);
+  filter: blur(12px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 600ms ease;
+}
+@media (min-width: 768px) {
+  .paper-sheet-bottom-shadow::before {
+    bottom: -20px;
+    left: 8%;
+    right: 8%;
+    height: 30px;
+    filter: blur(15px);
+  }
+}
+
+/* 3D Keycard Flip Engine & Tactile Hover States */
+.keycard-perspective {
+  perspective: 1600px;
+}
+
+/* Ambient Luxury Keycard Floating in the Air */
+@keyframes keycard-levitate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.18deg);
+  }
+}
+
+@keyframes keycard-shadow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.92) translateY(2.5px);
+    opacity: 0.72;
+  }
+}
+
+.keycard-floating-stage {
+  animation: keycard-levitate 5.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.group:hover .keycard-floating-stage {
+  animation-play-state: paused;
+}
+
+.keycard-shadow-breathing {
+  animation: keycard-shadow-pulse 5.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform, opacity;
+}
+
+.group:hover .keycard-shadow-breathing {
+  animation-play-state: paused;
+}
+
+/* Tactile 3D Flip Invitation Gesture (In the exact same direction as the flip: rotateY positive) */
+@keyframes keycard-flip-cue {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0);
+  }
+  28% {
+    transform: rotateY(14deg) rotateX(-1.5deg) translateY(-4px) translateZ(14px);
+  }
+  50% {
+    transform: rotateY(18deg) rotateX(-2deg) translateY(-6px) translateZ(18px);
+  }
+  75% {
+    transform: rotateY(5deg) rotateX(-0.5deg) translateY(-1px) translateZ(4px);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0);
+  }
+}
+
+.keycard-flipper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), translate 600ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 600ms ease;
+}
+
+.keycard-flipper.is-nudging:not(.is-flipped) {
+  animation: keycard-flip-cue 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.keycard-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keycard-floating-stage,
+  .keycard-shadow-breathing,
+  .keycard-flipper.is-nudging {
+    animation: none !important;
+  }
+}
+
+.keycard-face {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: inherit;
+}
+
+.keycard-face-back {
+  grid-column: 1;
+  grid-row: 1;
+  transform: rotateY(180deg);
+}
+
+/* Atmospheric Luxury Backgrounds & Burle Marx Wave Motif */
+.bg-copacabana-canvas {
+  background-color: #FAF8F5;
+  background-image:
+    radial-gradient(at 12% 8%, rgba(197, 168, 128, 0.18) 0px, transparent 48%),
+    radial-gradient(at 88% 22%, rgba(184, 76, 22, 0.06) 0px, transparent 45%),
+    radial-gradient(at 50% 75%, rgba(234, 229, 220, 0.85) 0px, transparent 58%);
+}
+
+.bg-burle-marx-waves {
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='80' viewBox='0 0 240 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 C 60 0, 60 80, 120 40 C 180 0, 180 80, 240 40' fill='none' stroke='%239E7E47' stroke-width='1' stroke-opacity='0.11'/%3E%3Cpath d='M0 60 C 60 20, 60 100, 120 60 C 180 20, 180 100, 240 60' fill='none' stroke='%231C1C1C' stroke-width='1' stroke-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.bg-night-sanctuary {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(158, 126, 71, 0.18), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(79, 66, 85, 0.25), transparent 50%),
+    linear-gradient(165deg, #141414 0%, #1C1C1C 60%, #181512 100%);
+}
+
+/* MD3E Harmonious Image Container Curvature (No excessive corner notch clipping interior chips) */
+.organic-arch-left,
+.organic-arch-right {
+  border-radius: 22px;
+  transition: border-radius 420ms var(--ease-md3e-spring);
+}
+.organic-arch-left:hover,
+.organic-arch-right:hover {
+  border-radius: 26px;
+}
+
+/* MD3E + Liquid Glass Morph Tactile Cards with Mica & Saddle Stitching */
+.papersheet-card {
+  position: relative;
+  --current-stitch-inset: var(--stitch-padding, 6px);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(250, 248, 245, 0.74) 55%,
+    rgba(248, 243, 234, 0.86) 100%
+  );
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(158, 126, 71, 0.26);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.92),
+    inset 1px 0 1px rgba(255, 255, 255, 0.6),
+    var(--shadow-papersheet-1);
+  transition:
+    transform 450ms var(--ease-md3e-spring),
+    border-radius 450ms var(--ease-md3e-spring),
+    box-shadow 450ms var(--ease-md3e-spring),
+    border-color 450ms var(--ease-md3e-spring);
+}
+
+.papersheet-card::after {
+  content: '';
+  position: absolute;
+  inset: var(--current-stitch-inset, 6px);
+  border-radius: calc(var(--container-radius, 24px) - var(--current-stitch-inset, 6px));
+  border: 1px dashed rgba(158, 126, 71, 0.30);
+  pointer-events: none;
+  transition: border-radius 450ms var(--ease-md3e-spring);
+}
+
+.papersheet-card:hover {
+  transform: translateY(-5px) scale(1.005);
+  border-radius: 32px 20px 32px 20px;
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 1),
+    var(--shadow-papersheet-2);
+  border-color: rgba(158, 126, 71, 0.55);
+}
+
+.papersheet-card:hover::after {
+  border-radius: calc(32px - var(--current-stitch-inset, 6px)) calc(20px - var(--current-stitch-inset, 6px)) calc(32px - var(--current-stitch-inset, 6px)) calc(20px - var(--current-stitch-inset, 6px));
+}
+
+/* Brand-specific Glassmorphic Streaming Glows */
+.streaming-spotify {
+  background: rgba(29, 185, 84, 0.16);
+  border: 1px solid rgba(29, 185, 84, 0.52);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 0 28px -4px rgba(29, 185, 84, 0.42);
+  backdrop-filter: blur(18px);
+  transition: all 380ms var(--ease-md3e-spring);
+}
+.streaming-spotify:hover {
+  background: rgba(29, 185, 84, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 0 36px -2px rgba(29, 185, 84, 0.68);
+  transform: translateY(-2px);
+}
+
+.streaming-youtube {
+  background: rgba(255, 0, 0, 0.14);
+  border: 1px solid rgba(255, 0, 0, 0.50);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 0 28px -4px rgba(255, 0, 0, 0.38);
+  backdrop-filter: blur(18px);
+  transition: all 380ms var(--ease-md3e-spring);
+}
+.streaming-youtube:hover {
+  background: rgba(255, 0, 0, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 0 36px -2px rgba(255, 0, 0, 0.62);
+  transform: translateY(-2px);
+}
+
+.streaming-apple {
+  background: rgba(252, 60, 68, 0.16);
+  border: 1px solid rgba(252, 60, 68, 0.52);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 0 28px -4px rgba(252, 60, 68, 0.42);
+  backdrop-filter: blur(18px);
+  transition: all 380ms var(--ease-md3e-spring);
+}
+.streaming-apple:hover {
+  background: rgba(252, 60, 68, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 0 36px -2px rgba(252, 60, 68, 0.68);
+  transform: translateY(-2px);
+}
+
+/* Shimmer animation for Skeleton framework */
+@keyframes luxuryShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #EAE5DC 25%,
+    #F8F3EA 50%,
+    #EAE5DC 75%
+  );
+  background-size: 200% 100%;
+  animation: luxuryShimmer 2.2s infinite linear;
+}
+
+@keyframes slideUpPlayer {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-player-enter {
+  animation: slideUpPlayer 450ms var(--ease-md3e-spring) forwards;
+}
+
+@keyframes drawerSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-drawer-open {
+  animation: drawerSlideDown 380ms var(--ease-md3e-spring) forwards;
+}
+
+/* Native <dialog> scroll containment per modern-web-guidance */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(20, 20, 20, 0.68);
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   STICKY SCROLL MICA NAVIGATION DRAWER (GAVETA DESLIZABLE MD3E)
+   ========================================================================== */
+
+.Drawer {
+  --drawer-width: min(26rem, 86dvw, 100dvw - 16px);
+  --drawer-backdrop: 1;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.Drawer::backdrop {
+  background: rgba(14, 13, 11, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.Drawer-scroller {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--drawer-width) 100%;
+  overflow-x: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Drawer-scroller {
+    scroll-behavior: smooth;
+  }
+}
+
+.Drawer-scroller::after {
+  content: '';
+  scroll-snap-align: end;
+}
+
+.Drawer-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100svh;
+  overflow-y: auto;
+  scroll-snap-align: start;
+  scrollbar-width: none;
+  border-radius: 0 32px 32px 0;
+}
+
