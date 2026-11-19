@@ -346,10 +346,25 @@ export const FloatingStickyPlayer: React.FC = () => {
             <X className="w-3.5 h-3.5" />
           </button>
 
-          {/* Real-time YouTube Progress Bar on Minimized Capsule (Baseline Anchor, Taller, Clean Overflow Clip) */}
-          <div className="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 bg-white/20 overflow-hidden pointer-events-none progress-bar-mask rounded-b-full z-20">
+          {/* Real-time YouTube Audio Progress Bar: Exact Player Dimensions, Masked in the Baseline Channel beneath the Stitch */}
+          <div
+            className="player-baseline-stitch-mask z-25"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '9999px',
+              overflow: 'hidden',
+              pointerEvents: 'none',
+              WebkitMaskImage: 'linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px)',
+              maskImage: 'linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px)',
+            }}
+          >
+            {/* Baseline Track Groove (Always visible between bottom border and stitch) */}
+            <div className="absolute inset-0 bg-white/20" />
+
+            {/* Real-time Liquid Gold Progress Fill sweeping left-to-right */}
             <div
-              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_6px_rgba(197,168,128,0.5)]"
+              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_8px_rgba(197,168,128,0.8)]"
               style={{ width: `${progressPct}%` }}
             />
           </div>
