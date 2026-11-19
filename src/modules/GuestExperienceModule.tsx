@@ -437,7 +437,7 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
                 {/* Stay Details Summary Cards (Within Safe Margins) */}
-                <div className="w-full flex flex-col gap-2 text-left">
+                <div className="w-full flex flex-col gap-2.5 text-left">
                   <div className="p-2.5 bg-white/75 rounded-2xl border border-[#9E7E47]/25 shadow-2xs">
                     <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#9E7E47]">
                       <Calendar className="w-3 h-3" />
@@ -497,40 +497,19 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
                 {/* Griffin Logo with JW Signature Below */}
-                <div className="flex flex-col items-center text-center gap-0.5">
+                <div className="flex flex-col items-center text-center gap-1 pb-3">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
-                    className="h-7 w-auto object-contain"
+                    className="h-8 w-auto object-contain"
                   />
                   <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#221F1C]">
                     JW MARRIOTT
                   </p>
-                  <JWSignature className="h-6 w-auto text-[#1C1C1C]" />
+                  <JWSignature className="h-7 w-auto text-[#1C1C1C]" />
                   <p className="text-[10px] font-serif-luxury italic text-[#4E463A]">
                     J. Willard Marriott
                   </p>
-                  <p className="text-[8px] font-semibold uppercase tracking-[0.20em] text-[#9E7E47]">
-                    {language === 'pt'
-                      ? 'Compromisso com o Luxo Sereno'
-                      : "Founder's Promise of Quiet Luxury"}
-                  </p>
-                </div>
-
-                {/* Flip Back Button (Within Safe Margins, Elevated Above Corner Watermark) */}
-                <div className="w-full pb-2">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsFlipped(false);
-                    }}
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all shadow-md cursor-pointer"
-                  >
-                    <RotateCw className="w-3.5 h-3.5 text-[#9E7E47]" />
-                    <span>
-                      {language === 'pt' ? 'Voltar para Chave da Suíte' : 'Return to Suite Keycard'}
-                    </span>
-                  </button>
                 </div>
 
                 {/* Homage Imprint (Inside Stitch Bounds) */}
@@ -545,7 +524,7 @@ export const GuestExperienceModule: React.FC = () => {
               {/* DESKTOP VIEW (md+): Expansive Wide Stay Folio Plaque */}
               <div className="hidden md:grid md:grid-cols-12 md:gap-6 md:items-center h-full p-6 relative z-10 w-full flex-1">
                 {/* Left Column (4 cols): Griffin Emblem, Official Signature & Repositioned Action Button */}
-                <div className="col-span-4 flex flex-col items-center text-center gap-2 pr-6 border-r border-[#9E7E47]/25">
+                <div className="col-span-4 flex flex-col items-center text-center gap-3 pr-6 border-r border-[#9E7E47]/25">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
@@ -585,22 +564,6 @@ export const GuestExperienceModule: React.FC = () => {
                     <Crown className="w-3 h-3 text-[#9E7E47]" />
                     <span>TITANIUM ELITE FOLIO</span>
                   </div>
-
-                  {/* Repositioned Dark Action Button (Centered in Left Heritage Column, Never Cut Off) */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsFlipped(false);
-                    }}
-                    className="w-full max-w-[220px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all shadow-md cursor-pointer mt-1"
-                  >
-                    <RotateCw className="w-3.5 h-3.5 text-[#9E7E47]" />
-                    <span>
-                      {language === 'pt'
-                        ? 'Voltar para Chave da Suíte'
-                        : 'Return to Suite Keycard'}
-                    </span>
-                  </button>
                 </div>
 
                 {/* Right Column (8 cols): Stay Details Grid */}

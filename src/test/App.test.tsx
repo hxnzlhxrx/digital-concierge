@@ -157,13 +157,15 @@ describe('JW Marriott Copacabana Digital Guest Concierge Suite (PRD v1.3.0)', ()
     expect(screen.getAllByAltText(/JW Marriott Official Griffin Emblem/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/16 Nov – 21 Nov 2026|16 – 21 Nov 2026/i).length).toBeGreaterThan(0);
 
-    // Click to return to keycard
-    const returnBtn = screen.getAllByRole('button', { name: /Return to Suite Keycard/i })[0];
-    fireEvent.click(returnBtn);
+    // No dedicated return button: tapping the card itself flips it back
+    expect(screen.queryByRole('button', { name: /Return to Suite Keycard/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Founder's Promise of Quiet Luxury/i)).not.toBeInTheDocument();
+    expect(flipBtn).toHaveAttribute('aria-label', expect.stringMatching(/Flip to view suite keycard/i));
+    fireEvent.click(flipBtn);
     expect(flipBtn).toHaveAttribute('aria-label', expect.stringMatching(/Flip to view stay folio/i));
   });
 
-  it('flips keycard in Portuguese and ensures "Voltar para Chave da Suíte" button is visible and functional', () => {
+  it('flips keycard in Portuguese and back by tapping the card', () => {
     render(<App />);
 
     // Toggle to Portuguese
@@ -185,10 +187,10 @@ describe('JW Marriott Copacabana Digital Guest Concierge Suite (PRD v1.3.0)', ()
     expect(screen.getAllByText(/Registro Oficial de Hospedagem/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Fundador · JW Marriott Hotels/i).length).toBeGreaterThan(0);
 
-    // Verify "Voltar para Chave da Suíte" return button
-    const returnBtns = screen.getAllByRole('button', { name: /Voltar para Chave da Suíte/i });
-    expect(returnBtns.length).toBeGreaterThan(0);
-    fireEvent.click(returnBtns[0]);
+    // No dedicated return button in PT either: tapping the card flips it back
+    expect(screen.queryByRole('button', { name: /Voltar para Chave da Suíte/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Compromisso com o Luxo Sereno/i)).not.toBeInTheDocument();
+    fireEvent.click(flipBtn);
 
     // Card flips back to front
     expect(flipBtn).toHaveAttribute('aria-label', expect.stringMatching(/Virar para ver detalhes da estadia/i));
