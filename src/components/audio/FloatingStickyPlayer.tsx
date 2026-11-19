@@ -272,7 +272,7 @@ export const FloatingStickyPlayer: React.FC = () => {
     >
       {/* Minimized Compact Badge (Centered in viewport on mobile, docked right on tablet/desktop) */}
       {isMinimized && (
-        <div className="player-minimized-badge liquid-glass-dark stitched-brass rounded-full px-3.5 sm:px-4 py-2 sm:py-2.5 border border-[#9E7E47]/50 shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_15px_rgba(158,126,71,0.25)] flex items-center gap-2 sm:gap-2.5 backdrop-blur-xl animate-fade-in max-w-full overflow-hidden">
+        <div className="player-minimized-badge relative liquid-glass-dark stitched-brass rounded-full px-3.5 sm:px-4 py-2 sm:py-2.5 border border-[#9E7E47]/50 shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_15px_rgba(158,126,71,0.25)] flex items-center gap-2 sm:gap-2.5 backdrop-blur-xl animate-fade-in max-w-full overflow-hidden">
           {/* Spinning Vinyl Platter Thumbnail */}
           <div
             onClick={() => setIsMinimized(false)}
@@ -346,10 +346,10 @@ export const FloatingStickyPlayer: React.FC = () => {
             <X className="w-3.5 h-3.5" />
           </button>
 
-          {/* Real-time YouTube Progress Bar on Minimized Capsule (Anchored at Baseline, Taller & Masked) */}
-          <div className="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 bg-white/10 overflow-hidden pointer-events-none progress-bar-mask rounded-b-full">
+          {/* Real-time YouTube Progress Bar on Minimized Capsule (Baseline Anchor, Taller, Clean Overflow Clip) */}
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 bg-white/20 overflow-hidden pointer-events-none progress-bar-mask rounded-b-full z-20">
             <div
-              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear"
+              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_6px_rgba(197,168,128,0.5)]"
               style={{ width: `${progressPct}%` }}
             />
           </div>

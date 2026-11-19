@@ -479,9 +479,6 @@ button {
   touch-action: manipulation;
   user-select: none;
   overflow: hidden !important;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  mask-image: radial-gradient(white, black);
-  transform: translateZ(0);
 }
 .player-minimized-badge::after {
   border-radius: 9999px !important;
@@ -500,14 +497,11 @@ button {
   z-index: 20 !important;
 }
 
-/* Hardware-Accelerated Progress Bar Mask: Enforces strict rounded-tip containment without corner overflow */
+/* Clean Progress Bar Track: Enforces strict rounded-tip containment without corner overflow */
 .progress-bar-mask {
   position: relative;
   overflow: hidden !important;
   border-radius: 9999px !important;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  mask-image: radial-gradient(white, black);
-  transform: translateZ(0);
   isolation: isolate;
   contain: paint;
 }
