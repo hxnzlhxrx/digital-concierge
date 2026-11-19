@@ -3,6 +3,7 @@ import { MapPin, Phone, Shield, Award, Sparkles } from 'lucide-react';
 import { useConcierge } from '../../context/ConciergeContext';
 import { ModuleId } from '../../i18n/translations';
 import { DevTag } from './DevTag';
+import { openConciergeTour } from '../tour/ConciergeTour';
 
 export const Footer: React.FC = () => {
   const { t, setActiveModule, setActiveModal, language, isPlayerVisible } = useConcierge();
@@ -39,7 +40,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Sanctuary */}
           <div className="space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9E7E47]">
-              Copacabana Expressive Luxury
+              Copacabana Luxury
             </h3>
             <p className="text-xs leading-relaxed text-[#FAF8F5]/70">
               {language === 'en'
@@ -52,7 +53,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Curated Experiences */}
+          {/* Column 2: Signature Experiences */}
           <div className="space-y-3">
             <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9E7E47]">
               {t.footer.colExperience}
@@ -181,6 +182,12 @@ export const Footer: React.FC = () => {
               className="hover:text-[#9E7E47] transition-colors cursor-pointer"
             >
               {t.footer.safetyLink}
+            </button>
+            <button
+              onClick={openConciergeTour}
+              className="hover:text-[#9E7E47] transition-colors cursor-pointer"
+            >
+              {language === 'en' ? 'Concierge Guide' : 'Guia do Concierge'}
             </button>
             <span className="text-[#9E7E47] font-semibold">{t.footer.bonvoy}</span>
           </div>

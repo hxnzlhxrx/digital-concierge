@@ -13,9 +13,11 @@ import {
   Utensils,
   Car,
   LayoutGrid,
+  Compass,
 } from 'lucide-react';
 import { useConcierge } from '../../context/ConciergeContext';
 import { ModuleId } from '../../i18n/translations';
+import { openConciergeTour } from '../tour/ConciergeTour';
 
 const PRIMARY_NAV_MODULES: {
   id: ModuleId;
@@ -278,7 +280,7 @@ export const TopNavBar: React.FC = () => {
                   : 'bg-[#EAE5DC]/70 border-[#9E7E47]/20 shadow-inner'
               }`}
             >
-              {/* Sliding Active Indicator (MD3E Expressive Spring Motion) */}
+              {/* Sliding Active Indicator (MD3 Spring Motion) */}
               <div
                 aria-hidden="true"
                 className={`absolute top-0 left-0 rounded-full pointer-events-none z-0 transition-all ${
@@ -719,6 +721,18 @@ export const TopNavBar: React.FC = () => {
                 <span>Chauffeur</span>
               </button>
             </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                setDropdownOpen(false);
+                openConciergeTour();
+              }}
+              className="md3e-btn w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.11em] border border-dashed border-[#9E7E47]/50 text-[#9E7E47] hover:bg-[#9E7E47] hover:text-white hover:border-[#9E7E47] cursor-pointer whitespace-nowrap"
+            >
+              <Compass className="w-3.5 h-3.5" />
+              <span>{language === 'en' ? 'Concierge Guide' : 'Guia do Concierge'}</span>
+            </button>
 
             {broadcastMessage && (
               <div className="p-3 rounded-2xl bg-[#9E7E47]/12 border border-[#9E7E47]/30 flex items-start justify-between gap-2 text-[11px]">

@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer';
 import { FloatingStickyPlayer } from './components/audio/FloatingStickyPlayer';
 import { GlobalModals } from './components/modals/GlobalModals';
 import { ModuleSkeleton } from './components/skeletons/ModuleSkeleton';
+import { ConciergeTour } from './components/tour/ConciergeTour';
 import { GuestExperienceModule } from './modules/GuestExperienceModule';
 import { CariocaRhythmModule } from './modules/CariocaRhythmModule';
 import { ExploreCopacabanaModule } from './modules/ExploreCopacabanaModule';
@@ -57,6 +58,7 @@ const ConciergeShell: React.FC = () => {
       <Footer />
       <FloatingStickyPlayer />
       <GlobalModals />
+      <ConciergeTour />
     </div>
   );
 };
