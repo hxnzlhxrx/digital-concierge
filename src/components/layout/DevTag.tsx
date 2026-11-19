@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './devtag.css';
 
 /* Devtag </gishikoDev_> — portado de DovelaPortal (public-app.js · initDevtagShowcase).
-   En pantallas táctiles (sin hover) el efecto Expressive (trazo 1.5→3px + ondas) se muestra
+   En pantallas táctiles (sin hover) el efecto (trazo 1.5→3px + ondas) se muestra
    con la clase .is-showcase:
    1) una vez al llegar a la vista (≥ 8 s entre repeticiones, nunca en bucle);
    2) al tocar: el efecto arranca bajo el dedo y el enlace se abre tras 800 ms para que se vea

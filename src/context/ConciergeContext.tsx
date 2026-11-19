@@ -287,9 +287,9 @@ export const SOUNDSCAPE_COLLECTIONS: SoundscapeTrack[] = [
     youtubeEmbedUrl: 'https://www.youtube-nocookie.com/embed/SDcCVmshCzw?playlist=SDcCVmshCzw,U7eOs5lERww,_Tt7w1yhHPc,0xNO4NjTnfM,VEsmqOOKmmU,pNWpquMzJSY&autoplay=1&enablejsapi=1',
     appleEmbedUrl: 'https://embed.music.apple.com/us/playlist/late-night-jazz/pl.ee13f1f8d7864ed6ac747ae8a28f603c',
     descriptionEn:
-      'Velvety tenor saxophone, upright acoustic bass, and Steinway grand piano curated for twilight cocktails.',
+      'Velvety tenor saxophone, upright acoustic bass, and Steinway grand piano arranged for twilight cocktails.',
     descriptionPt:
-      'Saxofone tenor aveludado, contrabaixo acústico e piano de cauda Steinway curados para coquetéis ao anoitecer.',
+      'Saxofone tenor aveludado, contrabaixo acústico e piano de cauda Steinway arranjados para coquetéis ao anoitecer.',
     songs: [
       {
         id: 'lounge-1',

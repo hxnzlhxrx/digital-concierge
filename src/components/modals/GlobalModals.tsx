@@ -68,7 +68,7 @@ export const GlobalModals: React.FC = () => {
     e.preventDefault();
     addRequest({
       category: 'Amenity',
-      title: `In-Room Linen & Amenity Curation (${pillowType})`,
+      title: `In-Room Linen & Amenity Request (${pillowType})`,
       details: `${linenSet} · ${bathRitual} · Window: ${amenityTime}${
         amenityNotes ? ` · Note: ${amenityNotes}` : ''
       }`,
@@ -395,7 +395,7 @@ export const GlobalModals: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-[#4E463A] mb-2">
-                {language === 'en' ? 'Curated Destination' : 'Destino Curado'}
+                {language === 'en' ? 'Featured Destination' : 'Destino em Destaque'}
               </label>
               <select
                 value={destination}

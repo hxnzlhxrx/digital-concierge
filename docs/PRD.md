@@ -9,7 +9,7 @@
 - **Version:** 1.3.0 (Master Release & Production Baseline)
 - **Document Type:** Comprehensive Product Requirements Document (PRD) & Master Design Brief
 - **Target Audience:** Hotel Guests (In-suite & mobile), Executive Concierge & Front Desk Staff, Hotel Operations & F&B Management
-- **Design System:** Copacabana Expressive Luxury (`Copacabana Expressive Luxury`)
+- **Design System:** Copacabana Luxury (`Copacabana Luxury`)
 - **Status:** Approved / Production Specification
 
 ---
@@ -20,7 +20,7 @@
 High-net-worth guests staying at ultra-luxury beachfront properties like JW Marriott Copacabana demand seamless, frictionless access to hotel amenities, fine dining, acoustic local culture, safety protocols, and personalized services. Traditional physical compendiums or generic hotel portals fail to convey the sensory prestige of Rio de Janeiro's Zona Sul, create friction in authentication, and lack real-time synchronization with operational staff.
 
 ### 1.2 Product Vision
-Deliver a benchmark-setting digital hospitality experience that merges **Material 3 Expressive** design with authentic Carioca luxury. The application provides an integrated web app ecosystem spanning guest suites, mobile devices, and operations management—delivering instant amenity dispatch, verified regional security guidance, high-fidelity acoustic soundscapes, and daytime vector cartography.
+Deliver a benchmark-setting digital hospitality experience that merges **Material Design 3** design with authentic Carioca luxury. The application provides an integrated web app ecosystem spanning guest suites, mobile devices, and operations management—delivering instant amenity dispatch, verified regional security guidance, high-fidelity acoustic soundscapes, and daytime vector cartography.
 
 ---
 
@@ -28,12 +28,12 @@ Deliver a benchmark-setting digital hospitality experience that merges **Materia
 
 ### 2.1 Primary Persona: The Luxury International Guest ("The Discerning Explorer")
 - **Profile:** International business and leisure traveler staying in oceanfront suites (e.g., Suite 802).
-- **Core Needs:** Instant room keycard access via QR/digital pass, curated Michelin-star dining bookings (*Ristorante Hotel Cipriani*), vetted chauffeur itineraries in Mercedes-Benz vehicles, and verified safety contacts.
+- **Core Needs:** Instant room keycard access via QR/digital pass, Michelin-star dining bookings (*Ristorante Hotel Cipriani*), vetted chauffeur itineraries in Mercedes-Benz vehicles, and verified safety contacts.
 - **Pain Points:** Language barriers, fear of security issues in unfamiliar metropolitan areas, clunky login portals requiring passwords.
 
 ### 2.2 Secondary Persona: The Cultural Connoisseur
 - **Profile:** Guest seeking genuine immersion in Rio's musical and artistic heritage.
-- **Core Needs:** Authentic Bossa Nova, Samba, and MPB acoustic curations linked to personal streaming accounts (Spotify, Apple Music, YouTube Music) and historical insights into Copacabana's Burle Marx wave motif.
+- **Core Needs:** Authentic Bossa Nova, Samba, and MPB acoustic selections linked to personal streaming accounts (Spotify, Apple Music, YouTube Music) and historical insights into Copacabana's Burle Marx wave motif.
 
 ### 2.3 Tertiary Persona: Hotel Operations & Guest Experience Lead ("The Concierge Supervisor")
 - **Profile:** Front desk manager or VIP hospitality lead.
@@ -56,7 +56,7 @@ The application is structured into seven tightly integrated core functional modu
 - **Bilingual Switcher:** Native instant toggle between English (US) and Portuguese (BR).
 
 ### 3.2 Module 2: Acoustic Wellness & Soundscape (`Carioca Rhythm`)
-- **Soundscape Collections:** Four curated listening experiences: *Bossa Nova Morning Light*, *Sunset at Arpoador*, *Lapa Roots Samba*, and *Evening in Ipanema*.
+- **Soundscape Collections:** Four listening experiences: *Bossa Nova Morning Light*, *Sunset at Arpoador*, *Lapa Roots Samba*, and *Evening in Ipanema*.
 - **Thematic Glassmorphic Streaming Integration:** Deep-linked buttons to third-party streaming providers with custom glow states:
   - *Spotify* (Emerald `#1DB954` glow with glassmorphic backing).
   - *YouTube Music* (Crimson `#FF0000` glow).
@@ -65,7 +65,7 @@ The application is structured into seven tightly integrated core functional modu
 
 ### 3.3 Module 3: Vector Cartography & Regional Guide (`Explore Copacabana & Beyond`)
 - **Mandatory Cartographic Standard:** Strictly standardized daytime **Google Maps Light Mode vector cartography** with soft sand terrain, pastel arterial avenues, and crisp branded pin beacons. (Note: Dark/gold maps are retired).
-- **Interactive Curated Landmarks:**
+- **Interactive Landmarks:**
   - *Forte de Copacabana & Confeitaria Colombo*
   - *Pedra do Arpoador & Sunset Viewpoint*
   - *Corcovado & Cristo Redentor*
@@ -103,8 +103,8 @@ The application is structured into seven tightly integrated core functional modu
 
 ## 4. Visual Design System, Brand Guidelines & UX Standards
 
-### 4.1 Design Philosophy: Copacabana Expressive Luxury
-A curated convergence of **Material 3 Expressive** and ultra-luxury hospitality:
+### 4.1 Design Philosophy: Copacabana Luxury
+A convergence of **Material Design 3** and ultra-luxury hospitality:
 - **Warm Ivory / Sand Canvas:** `#FAF8F5`, `#FEF9EF`
 - **Surface Elevation Containers:** Pure White `#FFFFFF`, Surface Dim `#DED9D1`, Surface Container Low `#F8F3EA`
 - **Deep Contrast Charcoal / Night Slate:** `#1C1C1C`, `#141414`

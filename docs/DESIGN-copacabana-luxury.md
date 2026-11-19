@@ -1,5 +1,5 @@
 ---
-name: Copacabana Expressive Luxury
+name: Copacabana Luxury
 colors:
   surface: '#fef9ef'
   surface-dim: '#ded9d1'
@@ -141,7 +141,7 @@ spacing:
 
 This design system expresses the serene opulence, oceanfront sophistication, and architectural warmth of Rio de Janeiro’s iconic coastline. It marries the timeless prestige of legacy grand hotels with contemporary mobile fluid motion. 
 
-The aesthetic is anchored in **Expressive Tactile Luxury**:
+The aesthetic is anchored in **Tactile Luxury**:
 - **Atmosphere**: Breezy, sun-kissed architectural restraint balanced by intimate, tactile warmth.
 - **Audience**: Discerning global travelers, luxury tier patrons, and culinary/wellness connoisseurs demanding effortless digital concierge interactions.
 - **Visual Rhythm**: Expansive negative space reminiscent of linen stationery, editorial typography pairings, generous touch targets, and layered frosted glass elements that evoke sunlight filtering through sheer seaside drapes.
@@ -160,7 +160,7 @@ The palette draws directly from natural maritime elements—sun-warmed granite, 
 
 The typography couples the editorial heritage of Playfair Display with the clean geometric precision of Montserrat.
 
-- **Headlines & Editorial Titles**: Rendered in `Playfair Display`. Evokes vintage hospitality menus, architectural crests, and curated oceanfront vignettes. It sets an unhurried, graceful cadence.
+- **Headlines & Editorial Titles**: Rendered in `Playfair Display`. Evokes vintage hospitality menus, architectural crests, and oceanfront vignettes. It sets an unhurried, graceful cadence.
 - **Body Content**: Set in `Montserrat` with generous line-heights to ensure effortless legibility under varying coastal light conditions.
 - **Labels & Overlines**: Strict uppercase styling with wide tracking (`0.15em` to `0.2em`) using `Montserrat SemiBold`. This provides an understated architectural signage feel for amenities, status tags, and metadata.
 
@@ -186,7 +186,7 @@ This system avoids synthetic digital drops in favor of **Papersheet Layering** a
 
 ## Shapes
 
-The design leverages expressive, organic contours that echo modernist Brazilian architecture:
+The design leverages organic contours that echo modernist Brazilian architecture:
 
 - **Cards & Sheet Containers**: Crafted with generous `28px` to `32px` corner radii, instilling an approachable, sculpted tactility.
 - **Interactive Controls (Buttons, Inputs, Chips)**: Scaled with full pill morphology or `16px` curvature for contained nested forms.

@@ -68,7 +68,7 @@ const DEPARTMENT_SPEED_DIAL = [
     namePt: 'Governança & Enxoval',
     ext: 'Ext. 02',
     icon: Sparkles,
-    descEn: 'Turn-down service, garment pressing & pillow curation',
+    descEn: 'Turn-down service, garment pressing & pillow menu',
     descPt: 'Abertura de cama, passadoria expressa e menu de travesseiros',
   },
   {

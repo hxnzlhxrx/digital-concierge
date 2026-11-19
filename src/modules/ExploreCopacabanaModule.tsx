@@ -28,7 +28,7 @@ interface Landmark {
   image: string;
 }
 
-const CURATED_LANDMARKS: Landmark[] = [
+const LANDMARKS: Landmark[] = [
   {
     id: 'forte-copacabana',
     name: 'Forte de Copacabana & Confeitaria Colombo',
@@ -119,7 +119,7 @@ const CURATED_LANDMARKS: Landmark[] = [
 export const ExploreCopacabanaModule: React.FC = () => {
   const { t, language, setActiveModal, addRequest } = useConcierge();
   const [mapVariant, setMapVariant] = useState<'vector' | 'satellite'>('vector');
-  const [selectedLandmark, setSelectedLandmark] = useState<Landmark>(CURATED_LANDMARKS[0]);
+  const [selectedLandmark, setSelectedLandmark] = useState<Landmark>(LANDMARKS[0]);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
 
   const handleQuickChauffeur = (landmark: Landmark) => {
@@ -205,7 +205,7 @@ export const ExploreCopacabanaModule: React.FC = () => {
             </div>
 
             {/* Interactive Satin Brass Landmark Beacons */}
-            {CURATED_LANDMARKS.map((landmark, idx) => {
+            {LANDMARKS.map((landmark, idx) => {
               const isSelected = selectedLandmark.id === landmark.id;
               return (
                 <button
@@ -335,13 +335,13 @@ export const ExploreCopacabanaModule: React.FC = () => {
         </aside>
       </section>
 
-      {/* All 5 Curated Landmarks Selector Strip */}
+      {/* All 5 Landmarks Selector Strip */}
       <section className="space-y-5">
         <h2 className="font-serif-luxury text-2xl sm:text-3xl font-medium text-[#1C1C1C]">
           {t.explore.landmarksTitle}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {CURATED_LANDMARKS.map((item, index) => {
+          {LANDMARKS.map((item, index) => {
             const active = selectedLandmark.id === item.id;
             return (
               <button

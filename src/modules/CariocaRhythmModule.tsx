@@ -360,12 +360,12 @@ export const CariocaRhythmModule: React.FC = () => {
           </div>
         </section>
 
-        {/* Filter Pills & Four Curated Soundscape Collections */}
+        {/* Filter Pills & Four Soundscape Collections */}
         <section className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9E7E47]">
-                CURATED BY BARETTO-LONDRA & POSTO 5 ACOUSTIC STUDIO
+                SELECTED BY BARETTO-LONDRA & POSTO 5 ACOUSTIC STUDIO
               </span>
               <h2 className="font-serif-luxury text-2xl sm:text-4xl font-medium text-white mt-1">
                 {language === 'en' ? 'Four Listening Journeys' : 'Quatro Jornadas Sonoras'}

@@ -171,7 +171,7 @@
   animation: devtag-glow-spin 12s linear infinite;
 }
 
-/* Hover real (mouse/trackpad): trazo Expressive 1.5 → 3px + ondas concéntricas en bucle. */
+/* Hover real (mouse/trackpad): trazo 1.5 → 3px + ondas concéntricas en bucle. */
 @media (hover: hover) and (pointer: fine) {
   .footer__devtag:hover { color: #F8FAFC; }
   .footer__devtag:hover::before { opacity: .23; filter: blur(11px) saturate(1.1); animation-duration: 8s; }

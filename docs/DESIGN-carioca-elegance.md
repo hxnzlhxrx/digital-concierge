@@ -134,7 +134,7 @@ The typography system pairs the high-contrast elegance of **Playfair Display** w
 
 ## Layout & Spacing
 
-This design system utilizes a **Fixed Grid** on desktop (12 columns, 1280px max-width) to ensure the composition remains balanced and intentional, much like a curated gallery. 
+This design system utilizes a **Fixed Grid** on desktop (12 columns, 1280px max-width) to ensure the composition remains balanced and intentional, much like a gallery. 
 
 - **Generosity:** Spacing is the most important luxury asset. Use significant vertical gaps (`section-gap`) between content blocks to allow each feature to "breathe."
 - **Asymmetry:** Occasionally break the grid with offset images or text blocks to reflect the organic coastline of Rio.
