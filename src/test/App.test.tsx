@@ -142,7 +142,8 @@ describe('JW Marriott Copacabana Digital Guest Concierge Suite (PRD v1.3.0)', ()
     // Initially, keycard shows front details and flip affordance button
     const flipBtn = screen.getByRole('button', { name: /Flip to view stay folio/i });
     expect(flipBtn).toBeInTheDocument();
-    expect(screen.getAllByText(/Suite 802 Keycard Active/i).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/Suite 802 Keycard Active/i)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/MARRIOTT BONVOY® TITANIUM ELITE/i).length).toBeGreaterThan(0);
     expect(document.querySelector('.keycard-floating-stage')).toBeInTheDocument();
     expect(document.querySelector('.keycard-shadow-breathing')).toBeInTheDocument();
 

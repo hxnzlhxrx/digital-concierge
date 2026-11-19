@@ -156,7 +156,7 @@ export const GuestExperienceModule: React.FC = () => {
         <div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative mb-14 mx-auto w-full max-w-[316px] sm:max-w-[336px] md:max-w-5xl lg:max-w-[1080px] px-2 sm:px-4 group keycard-perspective"
+          className="relative mb-12 mx-auto w-full max-w-[300px] sm:max-w-[316px] md:max-w-[680px] lg:max-w-[720px] group keycard-perspective"
         >
           {/* Unified Ethereal Ambient Glow: Single Continuous Luxury Gradient (Satin Brass Gold -> Rio Sunset Terracotta) */}
           <div
@@ -200,13 +200,13 @@ export const GuestExperienceModule: React.FC = () => {
                 isFlipped ? 'is-flipped' : ''
               } ${
                 isNudging && !isFlipped ? 'is-nudging' : ''
-              } keycard-container-base cursor-pointer transition-transform duration-700 ease-out hover:-translate-y-1 sm:hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-[#9E7E47]/40 min-h-[496px] sm:min-h-[515px] md:min-h-[470px] lg:min-h-[460px]`}
+              } keycard-container-base cursor-pointer transition-transform duration-700 ease-out hover:-translate-y-1 sm:hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-[#9E7E47]/40 aspect-[54/85.6] md:aspect-[85.6/54]`}
             >
               {/* ============================================================== */}
               {/* FRONT FACE: Creamy Leather Keycard (Guest & Room Centerpiece)  */}
               {/* ============================================================== */}
               <div
-                className={`keycard-face relative z-10 leather-creamy-white stitched-dark paper-sheet-bottom-shadow keycard-container-base overflow-hidden shadow-[0_24px_55px_-12px_rgba(24,20,16,0.18)] min-h-[496px] sm:min-h-[515px] md:min-h-[470px] lg:min-h-[460px] flex flex-col justify-between ${
+                className={`keycard-face relative z-10 leather-creamy-white stitched-dark paper-sheet-bottom-shadow keycard-container-base overflow-hidden shadow-[0_24px_55px_-12px_rgba(24,20,16,0.18)] aspect-[54/85.6] md:aspect-[85.6/54] flex flex-col justify-between ${
                   isFlipped ? 'pointer-events-none' : 'pointer-events-auto'
                 }`}
               >
@@ -243,13 +243,13 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
               {/* MOBILE VIEW (< md): Authentic Vertical Standing Keycard */}
-              <div className="md:hidden flex flex-col items-center justify-between text-center min-h-[496px] sm:min-h-[515px] p-4 sm:p-5 space-y-2 relative z-10 w-full flex-1">
+              <div className="md:hidden flex flex-col items-center justify-between text-center h-full p-5 gap-3 relative z-10 w-full flex-1">
                 {/* Top: JW Marriott Griffin & Brand Header */}
-                <div className="flex flex-col items-center space-y-2 pt-2">
+                <div className="flex flex-col items-center gap-2">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
-                    className="h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                    className="h-10 w-auto object-contain transition-transform duration-300 hover:scale-105"
                   />
                   <div className="space-y-0.5">
                     <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#221F1C]">
@@ -259,38 +259,33 @@ export const GuestExperienceModule: React.FC = () => {
                       COPACABANA · RIO DE JANEIRO
                     </p>
                   </div>
-                  <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#9E7E47]/50 to-transparent mx-auto mt-1" />
+                  <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#9E7E47]/50 to-transparent mx-auto" />
                 </div>
 
                 {/* Center: Guest Name & Suite Keycard Details */}
-                <div className="space-y-3 my-auto py-2">
+                <div className="flex flex-col items-center gap-2">
                   <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-[0.20em] bg-[#1C1C1C] text-[#C5A880] shadow-xs">
                     <Crown className="w-3 h-3 text-[#9E7E47]" />
                     <span>MARRIOTT BONVOY® TITANIUM ELITE</span>
                   </div>
 
-                  <h1 className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-[#1C1C1C] tracking-tight leading-snug">
+                  <h1 className="font-serif-luxury text-2xl font-semibold text-[#1C1C1C] tracking-tight leading-tight">
                     {t.welcome.greeting}
                   </h1>
 
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.20em] text-[#9E7E47]">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] leading-relaxed text-[#9E7E47]">
                     {t.welcome.subGreeting}
                   </p>
-
-                  <div className="inline-flex flex-col items-center gap-1 text-[11px] text-[#4E463A] bg-[#FAF8F5]/85 py-2 px-5 rounded-2xl border border-[#9E7E47]/25 shadow-inner mt-2">
-                    <span className="font-semibold text-[#1C1C1C]">Suite 802 Keycard Active</span>
-                    <span className="text-[10px] text-[#9E7E47]">Oceanfront Presidential Wing · NFC</span>
-                  </div>
                 </div>
 
                 {/* Bottom: Action Controls (Contained within safe margins) */}
-                <div className="w-full max-w-[285px] sm:max-w-[320px] mx-auto space-y-2.5 pb-3">
+                <div className="w-full flex flex-col gap-2 pb-2">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setActiveModule('auth', true);
                     }}
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all cursor-pointer shadow-md"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all cursor-pointer shadow-md"
                   >
                     <KeyRound className="w-3.5 h-3.5 text-[#9E7E47]" />
                     <span>{t.nav.digitalKey}</span>
@@ -309,7 +304,7 @@ export const GuestExperienceModule: React.FC = () => {
 
                   {/* Gentle Tap Affordance Hint (Mobile Only - Positioned Comfortably Inside Stitches) */}
                   <div
-                    className={`flex items-center justify-center gap-1.5 pt-1 text-[10px] font-semibold uppercase tracking-[0.16em] select-none transition-all duration-500 ${
+                    className={`flex items-center justify-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] select-none transition-all duration-500 ${
                       isNudging ? 'text-[#9E7E47] scale-105' : 'text-[#9E7E47]/90'
                     }`}
                   >
@@ -338,13 +333,13 @@ export const GuestExperienceModule: React.FC = () => {
               </div>
 
               {/* DESKTOP VIEW (md+): Expansive Wide Keycard Plaque */}
-              <div className="hidden md:grid md:grid-cols-12 md:gap-8 md:items-center p-7 lg:py-8 lg:px-10 relative z-10 min-h-[470px] lg:min-h-[460px] w-full flex-1">
+              <div className="hidden md:grid md:grid-cols-12 md:gap-6 md:items-center h-full p-6 relative z-10 w-full flex-1">
                 {/* Left Column (3 cols): Authentic JW Marriott Griffin Emblem & Brand Heritage */}
-                <div className="col-span-3 flex flex-col items-center text-center space-y-3.5 pr-5 pl-2 border-r border-[#9E7E47]/25">
+                <div className="col-span-3 flex flex-col items-center text-center gap-3 pr-6 border-r border-[#9E7E47]/25">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
-                    className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                    className="h-10 w-auto object-contain transition-transform duration-300 hover:scale-105"
                   />
                   <div className="space-y-0.5">
                     <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#221F1C]">
@@ -357,55 +352,47 @@ export const GuestExperienceModule: React.FC = () => {
                   <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#9E7E47]/45 to-transparent mx-auto" />
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold text-[#4E463A] bg-[#FAF8F5]/90 border border-[#9E7E47]/25 shadow-2xs">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>Contactless Keycard Active</span>
+                    <span>RFID · NFC</span>
                   </div>
                 </div>
 
                 {/* Center Column (6 cols): Guest of Honor Centerpiece */}
-                <div className="col-span-6 flex flex-col items-center text-center space-y-3.5 px-2">
+                <div className="col-span-6 flex flex-col items-center text-center gap-3">
                   <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.20em] bg-[#1C1C1C] text-[#C5A880] shadow-xs">
                     <Crown className="w-3.5 h-3.5 text-[#9E7E47]" />
                     <span>MARRIOTT BONVOY® TITANIUM ELITE</span>
                   </div>
 
-                  <h1 className="font-serif-luxury text-3xl lg:text-[44px] xl:text-[50px] font-semibold text-[#1C1C1C] tracking-tight leading-[1.1]">
+                  <h1 className="font-serif-luxury text-[28px] lg:text-[32px] font-semibold text-[#1C1C1C] tracking-tight leading-[1.15]">
                     {t.welcome.greeting}
                   </h1>
 
-                  <p className="text-xs lg:text-sm font-semibold uppercase tracking-[0.22em] text-[#9E7E47]">
+                  <p className="text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.18em] leading-relaxed text-[#9E7E47]">
                     {t.welcome.subGreeting}
                   </p>
-
-                  <div className="inline-flex items-center gap-2 text-xs text-[#4E463A] bg-[#FAF8F5]/85 py-1.5 px-4 rounded-xl border border-[#9E7E47]/25 shadow-inner">
-                    <span className="font-semibold text-[#1C1C1C]">Suite 802 Keycard Active</span>
-                    <span className="text-[#9E7E47]">·</span>
-                    <span>Oceanfront Presidential Wing</span>
-                    <span className="text-[#9E7E47]">·</span>
-                    <span>RFID / NFC</span>
-                  </div>
                 </div>
 
                 {/* Right Column (3 cols): Quick Actions & Privileges */}
-                <div className="col-span-3 flex flex-col items-center text-center space-y-2.5 pl-5 pr-2 border-l border-[#9E7E47]/25">
+                <div className="col-span-3 flex flex-col items-center text-center gap-2 pl-6 border-l border-[#9E7E47]/25">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setActiveModule('auth', true);
                     }}
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all cursor-pointer shadow-md"
+                    className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.12em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all cursor-pointer shadow-md"
                   >
                     <KeyRound className="w-3.5 h-3.5 text-[#9E7E47]" />
                     <span>{t.nav.digitalKey}</span>
                   </button>
 
-                  <span className="w-full inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-medium bg-white/80 border border-[#9E7E47]/25 text-[#1C1C1C] shadow-xs">
+                  <span className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-medium bg-white/80 border border-[#9E7E47]/25 text-[#1C1C1C] shadow-xs">
                     <Sun className="w-3.5 h-3.5 text-[#9E7E47]" />
-                    <span>26°C · Posto 5 Breeze</span>
+                    <span>26°C · Posto 5</span>
                   </span>
 
-                  <span className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium bg-white/80 border border-[#9E7E47]/25 text-[#4E463A] shadow-xs">
+                  <span className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-medium bg-white/80 border border-[#9E7E47]/25 text-[#4E463A] shadow-xs">
                     <Sparkles className="w-3.5 h-3.5 text-[#9E7E47]" />
-                    <span>Dedicated Butler 24/7</span>
+                    <span>Butler 24/7</span>
                   </span>
                 </div>
 
@@ -429,7 +416,7 @@ export const GuestExperienceModule: React.FC = () => {
             {/* BACK FACE: Stay Information Folio + Griffin & JW Signature    */}
             {/* ============================================================== */}
             <div
-              className={`keycard-face keycard-face-back relative z-10 leather-creamy-white stitched-dark paper-sheet-bottom-shadow keycard-container-base overflow-hidden shadow-[0_24px_55px_-12px_rgba(24,20,16,0.18)] min-h-[496px] sm:min-h-[515px] md:min-h-[470px] lg:min-h-[460px] flex flex-col justify-between ${
+              className={`keycard-face keycard-face-back relative z-10 leather-creamy-white stitched-dark paper-sheet-bottom-shadow keycard-container-base overflow-hidden shadow-[0_24px_55px_-12px_rgba(24,20,16,0.18)] aspect-[54/85.6] md:aspect-[85.6/54] flex flex-col justify-between ${
                 isFlipped ? 'pointer-events-auto' : 'pointer-events-none'
               }`}
             >
@@ -437,21 +424,21 @@ export const GuestExperienceModule: React.FC = () => {
               <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white/70 via-white/20 to-transparent pointer-events-none" />
 
               {/* MOBILE VIEW (< md): Vertical Standing Stay Folio */}
-              <div className="md:hidden flex flex-col items-center justify-between text-center min-h-[496px] sm:min-h-[515px] p-4 sm:p-5 space-y-2 relative z-10 w-full flex-1">
+              <div className="md:hidden flex flex-col items-center justify-between text-center h-full p-5 gap-3 relative z-10 w-full flex-1">
                 {/* Top Header & Confirmation */}
-                <div className="space-y-1 pt-1">
+                <div className="flex flex-col items-center gap-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-[0.20em] bg-[#1C1C1C] text-[#C5A880]">
                     <Crown className="w-3 h-3 text-[#9E7E47]" />
                     <span>TITANIUM ELITE FOLIO</span>
                   </div>
-                  <p className="text-[10px] font-mono font-bold tracking-[0.18em] text-[#9E7E47] uppercase pt-0.5">
+                  <p className="text-[10px] font-mono font-bold tracking-[0.18em] text-[#9E7E47] uppercase">
                     #JWM-802-RIO-2026
                   </p>
                 </div>
 
                 {/* Stay Details Summary Cards (Within Safe Margins) */}
-                <div className="w-full max-w-[285px] sm:max-w-[320px] mx-auto space-y-2.5 my-auto text-left">
-                  <div className="p-3 bg-white/75 rounded-2xl border border-[#9E7E47]/25 shadow-2xs">
+                <div className="w-full flex flex-col gap-2 text-left">
+                  <div className="p-2.5 bg-white/75 rounded-2xl border border-[#9E7E47]/25 shadow-2xs">
                     <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#9E7E47]">
                       <Calendar className="w-3 h-3" />
                       <span>{language === 'pt' ? 'Período da Estadia' : 'Stay Schedule'}</span>
@@ -466,7 +453,7 @@ export const GuestExperienceModule: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="p-3 bg-white/75 rounded-2xl border border-[#9E7E47]/25 shadow-2xs">
+                  <div className="p-2.5 bg-white/75 rounded-2xl border border-[#9E7E47]/25 shadow-2xs">
                     <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#9E7E47]">
                       <MapPin className="w-3 h-3" />
                       <span>{language === 'pt' ? 'Acomodação Presidencial' : 'Presidential Suite'}</span>
@@ -510,16 +497,16 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
                 {/* Griffin Logo with JW Signature Below */}
-                <div className="flex flex-col items-center justify-center text-center space-y-1 pt-1 pb-1">
+                <div className="flex flex-col items-center text-center gap-0.5">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
-                    className="h-8 w-auto object-contain"
+                    className="h-7 w-auto object-contain"
                   />
                   <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#221F1C]">
                     JW MARRIOTT
                   </p>
-                  <JWSignature className="h-7 w-auto text-[#1C1C1C]" />
+                  <JWSignature className="h-6 w-auto text-[#1C1C1C]" />
                   <p className="text-[10px] font-serif-luxury italic text-[#4E463A]">
                     J. Willard Marriott
                   </p>
@@ -531,13 +518,13 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
                 {/* Flip Back Button (Within Safe Margins, Elevated Above Corner Watermark) */}
-                <div className="w-full max-w-[280px] sm:max-w-[310px] mx-auto pb-5 pt-1">
+                <div className="w-full pb-2">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsFlipped(false);
                     }}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all shadow-md cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[#1C1C1C] text-[#C5A880] hover:bg-[#9E7E47] hover:text-white transition-all shadow-md cursor-pointer"
                   >
                     <RotateCw className="w-3.5 h-3.5 text-[#9E7E47]" />
                     <span>
@@ -556,9 +543,9 @@ export const GuestExperienceModule: React.FC = () => {
               </div>
 
               {/* DESKTOP VIEW (md+): Expansive Wide Stay Folio Plaque */}
-              <div className="hidden md:grid md:grid-cols-12 md:gap-8 md:items-center p-7 lg:py-8 lg:px-10 relative z-10 min-h-[470px] lg:min-h-[460px] w-full flex-1">
+              <div className="hidden md:grid md:grid-cols-12 md:gap-6 md:items-center h-full p-6 relative z-10 w-full flex-1">
                 {/* Left Column (4 cols): Griffin Emblem, Official Signature & Repositioned Action Button */}
-                <div className="col-span-4 flex flex-col items-center text-center space-y-2 pr-5 pl-2 border-r border-[#9E7E47]/25 my-auto">
+                <div className="col-span-4 flex flex-col items-center text-center gap-2 pr-6 border-r border-[#9E7E47]/25">
                   <img
                     src="/assets/jw-marriott-logo.png"
                     alt="JW Marriott Official Griffin Emblem"
@@ -617,9 +604,9 @@ export const GuestExperienceModule: React.FC = () => {
                 </div>
 
                 {/* Right Column (8 cols): Stay Details Grid */}
-                <div className="col-span-8 space-y-3.5 pl-4 pr-3 my-auto">
+                <div className="col-span-8 flex flex-col gap-3">
                   {/* Top Row: Title & Confirmation */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#9E7E47]/20 pb-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#9E7E47]/20 pb-2">
                     <div>
                       <h2 className="text-base font-serif-luxury font-bold text-[#1C1C1C]">
                         {language === 'pt'
@@ -1062,7 +1049,7 @@ export const GuestExperienceModule: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9E7E47]">
-              BESPOKE SANCTUARY CURATION · SUITE 802
+              BESPOKE SANCTUARY SERVICE · SUITE 802
             </span>
             <h2 className="font-serif-luxury text-3xl sm:text-4xl font-medium text-[#1C1C1C] mt-1">
               {language === 'en'
