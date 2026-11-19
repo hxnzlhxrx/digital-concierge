@@ -272,7 +272,7 @@ export const FloatingStickyPlayer: React.FC = () => {
     >
       {/* Minimized Compact Badge (Centered in viewport on mobile, docked right on tablet/desktop) */}
       {isMinimized && (
-        <div className="player-minimized-badge liquid-glass-dark stitched-brass rounded-full pl-2 pr-2.5 sm:pr-3 py-1.5 sm:py-2 border border-[#9E7E47]/50 shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_15px_rgba(158,126,71,0.25)] flex items-center gap-2 sm:gap-3 backdrop-blur-xl animate-fade-in max-w-full overflow-hidden">
+        <div className="player-minimized-badge liquid-glass-dark stitched-brass rounded-full px-3.5 sm:px-4 py-2 sm:py-2.5 border border-[#9E7E47]/50 shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_15px_rgba(158,126,71,0.25)] flex items-center gap-2 sm:gap-2.5 backdrop-blur-xl animate-fade-in max-w-full overflow-hidden">
           {/* Spinning Vinyl Platter Thumbnail */}
           <div
             onClick={() => setIsMinimized(false)}
@@ -346,10 +346,10 @@ export const FloatingStickyPlayer: React.FC = () => {
             <X className="w-3.5 h-3.5" />
           </button>
 
-          {/* Real-time YouTube Progress Micro-Line on Minimized Capsule */}
-          <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-white/10 rounded-full overflow-hidden pointer-events-none">
+          {/* Real-time YouTube Progress Bar on Minimized Capsule (Anchored at Baseline, Taller & Masked) */}
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 bg-white/10 overflow-hidden pointer-events-none progress-bar-mask rounded-b-full">
             <div
-              className="h-full bg-gradient-to-r from-[#9E7E47] to-[#C5A880] transition-[width] duration-150 ease-linear shadow-[0_0_6px_rgba(197,168,128,0.5)]"
+              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -583,21 +583,21 @@ export const FloatingStickyPlayer: React.FC = () => {
                 aria-valuenow={progressSec}
                 tabIndex={0}
                 title={language === 'en' ? 'Click to seek in track' : 'Clique para avançar/retroceder'}
-                className="group relative flex-1 h-4 flex items-center cursor-pointer select-none"
+                className="group relative flex-1 h-5 flex items-center cursor-pointer select-none"
               >
-                {/* Background Track */}
-                <div className="w-full h-1.5 bg-white/15 rounded-full overflow-hidden group-hover:h-2 transition-all">
+                {/* Background Track with Hardware-Accelerated Mask */}
+                <div className="w-full h-2 bg-white/15 rounded-full overflow-hidden group-hover:h-2.5 transition-all progress-bar-mask relative">
                   {/* Real-time YouTube Audio Progress Fill */}
                   <div
-                    className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] rounded-full transition-[width] duration-150 ease-linear shadow-[0_0_8px_rgba(197,168,128,0.5)]"
+                    className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear"
                     style={{ width: `${progressPct}%` }}
                   />
                 </div>
 
-                {/* Seeker Handle (glow thumb appears on hover) */}
+                {/* Seeker Handle (glow thumb appears on hover, bounded within track) */}
                 <div
-                  className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border border-[#9E7E47] shadow-[0_0_6px_rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                  style={{ left: `calc(${progressPct}% - 6px)` }}
+                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white border border-[#9E7E47] shadow-[0_0_6px_rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  style={{ left: `clamp(0px, calc(${progressPct}% - 7px), calc(100% - 14px))` }}
                 />
               </div>
 

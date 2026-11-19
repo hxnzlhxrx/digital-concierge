@@ -474,14 +474,18 @@ button {
 /* Player Stitched Perimeters: Exact Concentric Corner Radii matching container formats */
 .player-minimized-badge {
   --container-radius: 9999px;
-  --stitch-padding: 5px;
+  --stitch-padding: 4px;
   border-radius: 9999px;
   touch-action: manipulation;
   user-select: none;
+  overflow: hidden !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  transform: translateZ(0);
 }
 .player-minimized-badge::after {
   border-radius: 9999px !important;
-  inset: 5px !important;
+  inset: 4px !important;
   z-index: 10 !important;
 }
 
@@ -494,6 +498,18 @@ button {
   border-radius: 22px !important; /* 28px outer - 6px inset = 22px inner concentric */
   inset: 6px !important;
   z-index: 20 !important;
+}
+
+/* Hardware-Accelerated Progress Bar Mask: Enforces strict rounded-tip containment without corner overflow */
+.progress-bar-mask {
+  position: relative;
+  overflow: hidden !important;
+  border-radius: 9999px !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  transform: translateZ(0);
+  isolation: isolate;
+  contain: paint;
 }
 
 /* Bespoke Saddle Stitching Perimeter - Ivory */
@@ -758,6 +774,50 @@ button {
   grid-column: 1;
   grid-row: 1;
   transform: rotateY(180deg);
+}
+
+/* Audiophile Analog Turntable Tonearm & Needle Micro-Drift Animation */
+@keyframes tonearm-needle-sway {
+  0%, 100% {
+    transform: rotate(26deg);
+  }
+  50% {
+    transform: rotate(27.4deg);
+  }
+}
+
+.tonearm-needle-sway {
+  animation: tonearm-needle-sway 4.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: 85px 35px;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tonearm-needle-sway {
+    animation: none !important;
+  }
+}
+
+/* Audiophile Stylus Diamond Tip Micro-Glow (Stable Opacity Pulse, Zero Transform/Jitter Glitches) */
+@keyframes needle-stylus-glow {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.needle-stylus-glow {
+  animation: needle-stylus-glow 2.8s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .needle-stylus-glow {
+    animation: none !important;
+    opacity: 0.4 !important;
+  }
 }
 
 /* Atmospheric Luxury Backgrounds & Burle Marx Wave Motif */

@@ -189,25 +189,10 @@ export const CariocaRhythmModule: React.FC = () => {
                     <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                   </a>
                 </div>
-
-                {/* Global In-Site Sticky Streaming Console Indicator */}
-                <div className="pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs text-[#C5A880]">
-                  <div className="flex items-center gap-2">
-                    <Radio className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.16em]">
-                      {language === 'en'
-                        ? 'Global In-Site Player Active on Right Viewport'
-                        : 'Player Global Ativo no Canto Direito do Viewport'}
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-white/50 font-mono">
-                    {language === 'en' ? 'Sticky Streaming Console' : 'Console de Streaming Sticky'}
-                  </span>
-                </div>
               </div>
             </div>
 
-            {/* Right 5 Columns: Tactile Stitched Cognac Leather & Analog Vinyl Platter */}
+            {/* Right 5 Columns: Tactile Stitched Cognac Leather & Analog Vinyl Platter with Animated Audiophile Tonearm */}
             <div className="lg:col-span-5 flex items-center justify-center">
               <div className="relative w-full max-w-md aspect-square rounded-[40px] p-6 leather-cognac stitched-brass border border-[#9E7E47]/50 flex items-center justify-center overflow-hidden shadow-2xl">
                 {/* Background Turntable Texture (Purely decorative, aria-hidden, no alt text to prevent leaking text) */}
@@ -256,13 +241,119 @@ export const CariocaRhythmModule: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Corner Acoustic Status Pill */}
-                <div className="absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-[#141414]/85 backdrop-blur-md border border-[#9E7E47]/30 text-[11px]">
-                  <span className="inline-flex items-center gap-2 text-[#C5A880] font-semibold">
-                    <Waves className="w-3.5 h-3.5 text-[#9E7E47]" />
-                    <span>{currentTrack.subtitle}</span>
-                  </span>
-                  <span className="font-mono text-[#FAF8F5]/70">{currentTrack.duration}</span>
+                {/* Audiophile Luxury Tonearm & Stylus Needle (Pivot in Top-Right, Swings onto Vinyl with Subtle Analog Micro-Drift) */}
+                <div
+                  className="absolute top-2 right-2 sm:top-3 sm:right-3 w-32 h-64 sm:w-36 sm:h-72 pointer-events-none z-20"
+                  style={{ filter: 'drop-shadow(0 14px 18px rgba(0,0,0,0.75))' }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 120 240"
+                    className={`w-full h-full transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                      isPlaying ? 'rotate-[26deg] tonearm-needle-sway' : 'rotate-[-6deg]'
+                    }`}
+                    style={{ transformOrigin: '85px 35px' }}
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="armTubeGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#C5A880" />
+                        <stop offset="35%" stopColor="#FFF9F0" />
+                        <stop offset="65%" stopColor="#9E7E47" />
+                        <stop offset="100%" stopColor="#3C342A" />
+                      </linearGradient>
+                      <radialGradient id="pivotBaseGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#3A342D" />
+                        <stop offset="60%" stopColor="#1E1B18" />
+                        <stop offset="100%" stopColor="#0F0D0C" />
+                      </radialGradient>
+                      <linearGradient id="counterweightGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stopColor="#2A2622" />
+                        <stop offset="45%" stopColor="#E0C9A6" />
+                        <stop offset="70%" stopColor="#9E7E47" />
+                        <stop offset="100%" stopColor="#1A1815" />
+                      </linearGradient>
+                      <linearGradient id="headshellGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#24201D" />
+                        <stop offset="50%" stopColor="#181512" />
+                        <stop offset="100%" stopColor="#0B0B0B" />
+                      </linearGradient>
+                    </defs>
+
+                    {/* Tonearm Rest Post & Cueing Arm Bridge */}
+                    <g id="arm-rest-assembly">
+                      <rect x="104" y="60" width="7" height="24" rx="2.5" fill="#1C1815" stroke="#9E7E47" strokeWidth="0.8" />
+                      <path d="M 85 52 Q 106 58 108 72" stroke="#C5A880" strokeWidth="1.5" strokeLinecap="round" />
+                    </g>
+
+                    {/* Counterweight Behind Pivot Bearing */}
+                    <g id="counterweight">
+                      <rect x="75" y="4" width="20" height="20" rx="4" fill="url(#counterweightGrad)" stroke="#9E7E47" strokeWidth="1" />
+                      <line x1="77" y1="10" x2="93" y2="10" stroke="#1A1815" strokeWidth="1" opacity="0.7" />
+                      <line x1="77" y1="14" x2="93" y2="14" stroke="#1A1815" strokeWidth="1" opacity="0.7" />
+                      <line x1="77" y1="18" x2="93" y2="18" stroke="#1A1815" strokeWidth="1" opacity="0.7" />
+                    </g>
+
+                    {/* Gimbal Base & Bearing Ring */}
+                    <g id="gimbal-base">
+                      <circle cx="85" cy="35" r="26" fill="url(#pivotBaseGrad)" stroke="#9E7E47" strokeWidth="1.8" />
+                      <circle cx="85" cy="35" r="18" fill="#1C1916" stroke="#C5A880" strokeWidth="1" strokeDasharray="3 2" />
+                      <circle cx="85" cy="35" r="9" fill="url(#counterweightGrad)" stroke="#9E7E47" strokeWidth="1.2" />
+                      <circle cx="85" cy="35" r="3.5" fill="#141414" />
+                    </g>
+
+                    {/* Curved Metallic Tonearm Wand (Tube) */}
+                    <g id="tonearm-wand">
+                      <path
+                        d="M 85 35 C 85 90, 68 135, 42 175 L 32 200"
+                        stroke="#9E7E47"
+                        strokeWidth="6"
+                        strokeLinecap="round"
+                        opacity="0.35"
+                      />
+                      <path
+                        d="M 85 35 C 85 90, 68 135, 42 175 L 32 200"
+                        stroke="url(#armTubeGrad)"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M 85 35 C 85 90, 68 135, 42 175 L 32 200"
+                        stroke="rgba(255, 255, 255, 0.75)"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                      />
+                    </g>
+
+                    {/* Headshell, Cartridge & Stylus Assembly */}
+                    <g id="cartridge-headshell">
+                      <polygon
+                        points="24,196 40,202 30,230 16,222"
+                        fill="url(#headshellGrad)"
+                        stroke="#9E7E47"
+                        strokeWidth="1.4"
+                      />
+                      <line x1="22" y1="208" x2="33" y2="213" stroke="#C5A880" strokeWidth="1.5" />
+                      <path
+                        d="M 40 202 Q 50 205 48 214"
+                        stroke="#C5A880"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                      {/* Precision Audiophile Diamond Stylus Tip (Micro-Glow & Stable Anchor without SVG transform glitches) */}
+                      {isPlaying && (
+                        <circle
+                          cx="21"
+                          cy="227"
+                          r="4.5"
+                          fill="#FFE082"
+                          className="needle-stylus-glow pointer-events-none"
+                        />
+                      )}
+                      <circle cx="21" cy="227" r="2" fill="#FFE082" stroke="#9E7E47" strokeWidth="0.5" />
+                    </g>
+                  </svg>
                 </div>
               </div>
             </div>
