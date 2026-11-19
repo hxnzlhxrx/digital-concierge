@@ -346,25 +346,14 @@ export const FloatingStickyPlayer: React.FC = () => {
             <X className="w-3.5 h-3.5" />
           </button>
 
-          {/* Real-time YouTube Audio Progress Bar: Exact Player Dimensions, Masked in the Baseline Channel beneath the Stitch */}
-          <div
-            className="player-baseline-stitch-mask z-25"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: '9999px',
-              overflow: 'hidden',
-              pointerEvents: 'none',
-              WebkitMaskImage: 'linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px)',
-              maskImage: 'linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px)',
-            }}
-          >
-            {/* Baseline Track Groove (Always visible between bottom border and stitch) */}
-            <div className="absolute inset-0 bg-white/20" />
+          {/* Real-time YouTube Audio Progress Bar: Full Player Dimensions, Masked in the Entire Perimeter Space between Outer Margin and Inner Edge of Stitch */}
+          <div className="player-perimeter-stitch-mask z-15">
+            {/* Perimeter Track Groove (Always visible between outer border and inner stitch across all sides) */}
+            <div className="absolute inset-0 bg-white/15" />
 
-            {/* Real-time Liquid Gold Progress Fill sweeping left-to-right */}
+            {/* Real-time Liquid Gold Progress Fill sweeping left-to-right across full height & width */}
             <div
-              className="h-full bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_8px_rgba(197,168,128,0.8)]"
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#9E7E47] via-[#C5A880] to-[#E5D2BA] transition-[width] duration-150 ease-linear shadow-[0_0_10px_rgba(197,168,128,0.85)]"
               style={{ width: `${progressPct}%` }}
             />
           </div>

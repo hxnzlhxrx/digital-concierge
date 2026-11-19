@@ -483,7 +483,7 @@ button {
 .player-minimized-badge::after {
   border-radius: 9999px !important;
   inset: 4px !important;
-  z-index: 10 !important;
+  z-index: 25 !important;
 }
 
 .player-expanded-console {
@@ -504,15 +504,19 @@ button {
   isolation: isolate;
 }
 
-/* Progress Mask: Revealed strictly in the baseline channel between the outer player margin and the stitch */
-.player-baseline-stitch-mask {
+/* Full Perimeter Stitch Mask: Reveals the entire space between the outer player margin and the inner border of the stitch across all vertical & horizontal sides */
+.player-perimeter-stitch-mask {
   position: absolute;
   inset: 0;
   border-radius: 9999px;
   overflow: hidden;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px);
-  mask-image: linear-gradient(to top, #000 0px, #000 4.5px, transparent 4.5px);
+  padding: 5.5px;
+  box-sizing: border-box;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
 
 /* Bespoke Saddle Stitching Perimeter - Ivory */
