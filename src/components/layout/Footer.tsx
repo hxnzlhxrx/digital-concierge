@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Shield, Award, Sparkles } from 'lucide-react';
 import { useConcierge } from '../../context/ConciergeContext';
 import { ModuleId } from '../../i18n/translations';
+import { DevTag } from './DevTag';
 
 export const Footer: React.FC = () => {
   const { t, setActiveModule, setActiveModal, language, isPlayerVisible } = useConcierge();
@@ -28,6 +29,9 @@ export const Footer: React.FC = () => {
           <p className="text-[11px] uppercase tracking-[0.25em] text-[#9E7E47] font-semibold">
             {t.footer.tagline}
           </p>
+          <div className="mt-7">
+            <DevTag />
+          </div>
         </div>
 
         {/* 4-Column Master Footer Architecture */}

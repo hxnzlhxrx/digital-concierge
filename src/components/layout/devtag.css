@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Developer tag </gishikoDev_> — portado de DovelaPortal (featured-glow.css · v2).
+   Firma compacta con halo espectral continuo. El pie de este proyecto es siempre
+   oscuro, así que solo se conserva la paleta del tema oscuro.
+   ========================================================================== */
+@property --dev-glow-spin {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.footer__devtag,
+.footer__devtag:visited {
+  --devtag-radius: 10px;
+  --devtag-glow-gap: 4px;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  max-width: calc(100vw - 32px);
+  padding: 4px 10px;
+  border: 0;
+  border-radius: var(--devtag-radius);
+  appearance: none;
+  background: transparent;
+  color: #CBD5E1;
+  box-shadow: none;
+  font: inherit;
+  font-size: .9rem;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  transform-origin: center;
+  transition:
+    transform 580ms cubic-bezier(.16, 1.56, .3, 1),
+    color 240ms cubic-bezier(.4, 0, .2, 1),
+    filter 420ms cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Navegadores táctiles conservan :hover tras un toque ("sticky hover"): se neutraliza. */
+@media (hover: none), (pointer: coarse) {
+  .footer__devtag:hover { color: #CBD5E1; }
+  .footer__devtag:hover .footer__dev-glow { opacity: .5; }
+}
+
+.footer__devtag::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  right: -8px;
+  left: -8px;
+  height: 36px;
+  border-radius: calc(var(--devtag-radius) + var(--devtag-glow-gap) + 2px);
+  background: conic-gradient(from var(--dev-glow-spin),
+    rgb(37 99 235 / .54), rgb(6 182 212 / .5), rgb(139 92 246 / .46),
+    rgb(217 70 239 / .42), rgb(244 63 94 / .42), rgb(245 158 11 / .48),
+    rgb(132 204 22 / .42), rgb(16 185 129 / .5), rgb(37 99 235 / .54));
+  opacity: .15;
+  filter: blur(10px);
+  transform: translateY(-50%);
+  animation: devtag-glow-spin 16s linear infinite;
+  pointer-events: none;
+  transition: opacity 260ms ease, filter 420ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.footer__dev-ripples {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 4px;
+  left: 4px;
+  height: 24px;
+  display: block;
+  overflow: hidden;
+  border-radius: max(6px, calc(var(--devtag-radius) - 4px));
+  -webkit-clip-path: inset(0 round max(6px, calc(var(--devtag-radius) - 4px)));
+          clip-path: inset(0 round max(6px, calc(var(--devtag-radius) - 4px)));
+  contain: paint;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.footer__dev-ripples::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle,
+    transparent 0 8px,
+    rgb(96 165 250 / .74) 8.2px 9.4px,
+    transparent 9.8px 16px,
+    rgb(192 132 252 / .66) 16.2px 17.35px,
+    transparent 17.75px 24px,
+    rgb(52 211 153 / .62) 24.2px 25.3px,
+    transparent 25.7px 32px,
+    rgb(251 191 36 / .58) 32.2px 33.25px,
+    transparent 33.65px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(.28);
+  transform-origin: center;
+}
+
+.footer__devtag .footer__logo {
+  position: relative;
+  z-index: 2;
+  display: block;
+  min-width: 0;
+  color: inherit;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: .035em;
+  white-space: nowrap;
+  transition: color 240ms ease, filter 360ms ease, letter-spacing 520ms cubic-bezier(.16, 1.4, .3, 1);
+}
+.footer__dev-icon {
+  position: relative;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  transition: transform 560ms cubic-bezier(.16, 1.56, .3, 1), color 240ms ease;
+}
+
+/* Radio + separación exterior mantienen las curvas concéntricas. border (transparente,
+   enmascarado) + padding (anillo visible) suman siempre --devtag-stroke-max: el borde
+   interior no se mueve y el anillo engrosa hacia afuera, lejos de las ondas recortadas. */
+.footer__dev-glow {
+  --devtag-stroke: 1.5px;
+  --devtag-stroke-max: 3px;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: -5.5px;
+  left: -5.5px;
+  height: 33px;
+  overflow: hidden;
+  border: calc(var(--devtag-stroke-max) - var(--devtag-stroke)) solid transparent;
+  padding: var(--devtag-stroke);
+  border-radius: calc(var(--devtag-radius) + var(--devtag-glow-gap) + var(--devtag-stroke-max) - 1.5px);
+  background: conic-gradient(from var(--dev-glow-spin),
+    #2563EB 0deg, #06B6D4 46deg, #8B5CF6 92deg, #D946EF 138deg,
+    #F43F5E 184deg, #F59E0B 230deg, #84CC16 274deg,
+    #10B981 318deg, #2563EB 360deg);
+  pointer-events: none;
+  opacity: .5;
+  filter:
+    drop-shadow(0 0 4px rgb(59 130 246 / .3))
+    drop-shadow(0 0 8px rgb(139 92 246 / .12));
+  transform: translateY(-50%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) padding-box;
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) padding-box;
+          mask-composite: exclude;
+  transition:
+    opacity 260ms ease,
+    padding 420ms cubic-bezier(.42, 0, .58, 1),
+    border-width 420ms cubic-bezier(.42, 0, .58, 1),
+    right 560ms cubic-bezier(.16, 1.42, .3, 1),
+    left 560ms cubic-bezier(.16, 1.42, .3, 1),
+    height 560ms cubic-bezier(.16, 1.42, .3, 1),
+    border-radius 580ms cubic-bezier(.16, 1.56, .3, 1),
+    filter 360ms ease;
+  animation: devtag-glow-spin 12s linear infinite;
+}
+
+/* Hover real (mouse/trackpad): trazo Expressive 1.5 → 3px + ondas concéntricas en bucle. */
+@media (hover: hover) and (pointer: fine) {
+  .footer__devtag:hover { color: #F8FAFC; }
+  .footer__devtag:hover::before { opacity: .23; filter: blur(11px) saturate(1.1); animation-duration: 8s; }
+  .footer__devtag:hover .footer__dev-glow {
+    --devtag-stroke: var(--devtag-stroke-max);
+    opacity: .78;
+    filter:
+      drop-shadow(0 0 5px rgb(59 130 246 / .34))
+      drop-shadow(0 0 8px rgb(217 70 239 / .12));
+    animation-duration: 7s;
+  }
+  .footer__devtag:hover .footer__dev-ripples::before { animation: devtag-ripple-hover 1.8s cubic-bezier(.45, 0, .2, 1) infinite; }
+}
+
+/* Vitrina táctil (DevTag.tsx): mismo efecto al llegar al pie y al tocar; dos ciclos, nunca en bucle. */
+.footer__devtag.is-showcase { color: #F8FAFC; }
+.footer__devtag.is-showcase::before { opacity: .23; filter: blur(11px) saturate(1.1); animation-duration: 8s; }
+.footer__devtag.is-showcase .footer__dev-glow {
+  --devtag-stroke: var(--devtag-stroke-max);
+  opacity: .78;
+  filter:
+    drop-shadow(0 0 5px rgb(59 130 246 / .34))
+    drop-shadow(0 0 8px rgb(217 70 239 / .12));
+  animation-duration: 7s;
+}
+.footer__devtag.is-showcase .footer__dev-ripples::before { animation: devtag-ripple-hover 1.8s cubic-bezier(.45, 0, .2, 1) 2; }
+
+.footer__devtag:focus-visible {
+  outline: 3px solid #60A5FA;
+  outline-offset: 7px;
+  color: #F8FAFC;
+}
+.footer__devtag:focus-visible::before { opacity: .22; }
+.footer__devtag:focus-visible .footer__dev-glow { opacity: .8; }
+
+/* Pulsación: impacto de gota. */
+.footer__devtag:active {
+  transform: translateY(1px) scale(.975);
+  filter: hue-rotate(12deg) saturate(1.12);
+  transition: color 55ms cubic-bezier(.4, 0, 1, 1), filter 55ms cubic-bezier(.4, 0, 1, 1);
+}
+.footer__devtag:active::before { opacity: .24; filter: blur(9px) saturate(1.14); }
+.footer__devtag:active .footer__dev-ripples::before {
+  opacity: .34;
+  transform: translate(-50%, -50%) scale(.42);
+}
+.footer__devtag:active .footer__dev-glow {
+  right: -3px;
+  left: -3px;
+  height: 31px;
+  --devtag-stroke: 2px;
+  border-width: 0;
+  border-radius: 13px 15px 12px 14px / 14px 12px 15px 13px;
+  opacity: .82;
+  filter:
+    hue-rotate(18deg) saturate(1.18)
+    drop-shadow(0 0 6px rgb(139 92 246 / .32));
+  transition-duration: 55ms;
+  animation-duration: 1.6s;
+}
+.footer__devtag:active .footer__dev-icon { transform: translate(1px, -1px) rotate(2deg); }
+
+@keyframes devtag-glow-spin { to { --dev-glow-spin: 360deg; } }
+@keyframes devtag-ripple-hover {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.52); filter: blur(0); }
+  30% { opacity: .68; }
+  72% { opacity: .28; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.52); filter: blur(.3px); }
+}
+
+@media (max-width: 420px) {
+  .footer__devtag { padding-inline: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer__devtag,
+  .footer__devtag::before,
+  .footer__dev-ripples::before,
+  .footer__dev-glow,
+  .footer__dev-icon {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+  .footer__devtag:active { transform: none; }
+  .footer__devtag:hover .footer__dev-ripples::before,
+  .footer__devtag.is-showcase .footer__dev-ripples::before {
+    opacity: .34;
+    transform: translate(-50%, -50%) scale(.95);
+  }
+}
+@media (forced-colors: active) {
+  .footer__devtag { color: LinkText; outline-offset: 5px; }
+  .footer__devtag::before,
+  .footer__dev-glow { display: none; }
+}
